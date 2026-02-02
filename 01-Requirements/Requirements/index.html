@@ -26,7 +26,7 @@
 
     
       
-        <title>Module's Requirements - Liam Mabbutt's Datasheet</title>
+        <title>Mobility &amp; Motor Control Board – Project Requirements - Liam Mabbutt's Datasheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-requirements" class="md-skip">
+        <a href="#project-requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Module's Requirements
+              Mobility &amp; Motor Control Board – Project Requirements
             
           </span>
         </div>
@@ -471,7 +471,7 @@
           
   
   <span class="md-ellipsis">
-    Module's Requirements
+    Mobility &amp; Motor Control Board – Project Requirements
   </span>
   
 
@@ -482,7 +482,7 @@
         
   
   <span class="md-ellipsis">
-    Module's Requirements
+    Mobility &amp; Motor Control Board – Project Requirements
   </span>
   
 
@@ -502,9 +502,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-requirements" class="md-nav__link">
+  <a href="#project-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Module Requirements
+      Project Requirements
     </span>
   </a>
   
@@ -791,9 +791,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-requirements" class="md-nav__link">
+  <a href="#project-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Module Requirements
+      Project Requirements
     </span>
   </a>
   
@@ -822,43 +822,80 @@
   
 
 
-  <h1>Module's Requirements</h1>
+  <h1>Mobility &amp; Motor Control Board – Project Requirements</h1>
 
-<h2 id="module-requirements">Module Requirements</h2>
-<p>The following sections document the requirements that the this module need to fulfills to .....</p>
+<h2 id="project-requirements">Project Requirements</h2>
+<p>The purpose of this requirements table is to clearly define the functional and design constraints of the Mobility &amp; Motor Control Board before proceeding further into development. By identifying the minimum acceptable performance levels, target goals, and potential stretch objectives, this table ensures that design decisions remain aligned with the overall rover concept and system-level integration requirements.</p>
+<p>This module is responsible for providing rover mobility through motor actuation, speed regulation, steering control, feedback monitoring, and safety interlocks. The requirements listed below capture the critical features this module must support to successfully integrate with the team’s overall rover design.</p>
 <table>
 <thead>
 <tr>
 <th><strong>Requirement Description</strong></th>
-<th><strong>Measure of<br> Threshold</strong></th>
+<th><strong>Measure of<br>Threshold</strong></th>
 <th><strong>Target<br>Measure</strong></th>
-<th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
+<th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y/N)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Surface mounted, 3.3V switching power regulatore</td>
-<td>3.2 Volts</td>
-<td>3.3 Volts</td>
-<td style="text-align: center;">No</td>
+<td>Microcontroller power regulation</td>
+<td>Stable 3.2 V supply</td>
+<td>Regulated 3.3 V supply</td>
+<td style="text-align: center;">N</td>
 </tr>
 <tr>
-<td>Surface mounted microcontroller</td>
-<td>1 PIC or ESP</td>
-<td>8-bit PIC</td>
-<td style="text-align: center;">No</td>
+<td>Microcontroller selection</td>
+<td>PIC or ESP-class MCU</td>
+<td>ESP32 microcontroller</td>
+<td style="text-align: center;">N</td>
 </tr>
 <tr>
-<td>Wireless Communication</td>
-<td>Able to send or receive a Wi-Fi data</td>
-<td>Send and receive Wi-Fi Data to MQTT</td>
-<td style="text-align: center;">Yes</td>
+<td>Motor configuration support</td>
+<td>2-wheel drive (2WD)</td>
+<td>Expandable to 4-wheel drive (4WD)</td>
+<td style="text-align: center;">Y</td>
 </tr>
 <tr>
-<td><em>Rest are items your modules needs to support the task you are covering for the team's device.</em></td>
-<td>---</td>
-<td>---</td>
-<td style="text-align: center;"><strong>NO</strong></td>
+<td>Motor type compatibility</td>
+<td>Brushed DC motors</td>
+<td>High-efficiency DC gear motors</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td>Motor driver requirement</td>
+<td>External motor driver IC</td>
+<td>Integrated motor driver with protection</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td>Motor speed control</td>
+<td>Open-loop PWM control</td>
+<td>Closed-loop speed control</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td>Steering control method</td>
+<td>Differential steering</td>
+<td>Independent wheel steering control</td>
+<td style="text-align: center;">Y</td>
+</tr>
+<tr>
+<td>Motor feedback sensing</td>
+<td>Single feedback signal (current or speed)</td>
+<td>Current and speed feedback</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td>Safety interlock implementation</td>
+<td>Software-based motor disable</td>
+<td>Hardware and software interlocks</td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr>
+<td>Communication with main controller</td>
+<td>Digital control signals</td>
+<td>Fully synchronized control interface</td>
+<td style="text-align: center;">N</td>
 </tr>
 </tbody>
 </table>
