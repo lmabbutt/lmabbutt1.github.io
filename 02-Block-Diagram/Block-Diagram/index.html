@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#drive-train-control-subsystem-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -548,9 +548,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#drive-train-control-subsystem-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Drive Train Control Subsystem Overview
     </span>
   </a>
   
@@ -800,9 +800,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#drive-train-control-subsystem-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Drive Train Control Subsystem Overview
     </span>
   </a>
   
@@ -842,19 +842,16 @@
 
   <h1>Module's Block Diagram</h1>
 
-<h2 id="overview">Overview</h2>
-<p>This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...</p>
+<h2 id="drive-train-control-subsystem-overview">Drive Train Control Subsystem Overview</h2>
+<p>The drive train control subsystem is responsible for translating user commands into precise and reliable motor motion for the robot platform. This subsystem uses a dual-microcontroller architecture to separate high-level communication from low-level real-time motor control.</p>
+<p>An <strong>ESP32</strong> is used to handle <strong>Bluetooth Low Energy (BLE)</strong> communication with an external user device, such as a laptop or mobile phone. It receives motion commands wirelessly and forwards them to the motor control subsystem using a <strong>UART serial interface</strong>. This separation allows the ESP32 to manage wireless communication without impacting time-critical motor control tasks.</p>
+<p>A <strong>PIC18F47K42 microcontroller</strong> serves as the dedicated motor controller. It interprets commands received from the ESP32 and generates the required <strong>PWM signals and digital control outputs</strong> to drive the H-bridge motor driver. The PIC is responsible for controlling motor speed, direction, and enable signals, ensuring deterministic and reliable operation of the drive motors.</p>
+<p>An external <strong>H-bridge motor driver</strong> interfaces between the PIC and the DC motors, allowing high-current motor operation while protecting the microcontroller from electrical stress. The subsystem operates across multiple voltage domains, with regulated logic supplies for the microcontrollers and a higher-voltage supply dedicated to motor power.</p>
+<p>Overall, this architecture provides a modular, robust, and scalable solution for robotic drivetrain control by cleanly separating communication, control, and power stages.</p>
 <p>To get some initial formatting help, one can view <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/">"here"</a> some basic techniques.</p>
 <h2 id="example-block-diagram">Example Block Diagram</h2>
 <p>Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="individual-block-diagram.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="individual-block-diagram.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../INDIVIDUALBLOCKDIAGRAM.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="../INDIVIDUALBLOCKDIAGRAM.png"></a></p>
 
 
 
