@@ -14,7 +14,8 @@ The following sections are the selected major components necessary for  .....
 
 For more details, review the ["Appendix - Component Selection Process - Power Mangement"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#power-management) selection.
 
- ## Pololu #4741: 19:1 Metal Gearmotor 37Dx52L mm 12V 
+ ### Pololu 4741: 19:1 Metal Gearmotor 37Dx52L mm 12V 
+ 
  ![](Polulu_4741.jpg)
  
  [link to product](https://www.digikey.com/en/products/detail/pololu/4741/10450198)
@@ -25,7 +26,8 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 | Helical first-stage gears reduce noise and improve efficiency/smoothness compared to pure spur designs. | Higher stall current (~5.5A) demands a robust H-bridge/driver (e.g., not marginal with basic dual-channel ICs like DRV8833 at peaks). |
 | Larger 6mm D-shaft and robust 37mm-diameter build offer superior durability and easier wheel mounting for student projects. | Lower no-load speed (~530 RPM) results in slower top speed with typical wheels (e.g., ~1.5–2 m/s), which may feel sluggish for flat exploration unless PWM-boosted. |
 
-## Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder
+### Pololu 4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder
+
 ![](Polulu_4843.jpg)
 
 [link to product](https://www.digikey.com/en/products/detail/pololu/4843/10450245?s=N4IgTCBcDaIAoHsA2BXVACALADkwZhAF0BfIA)
@@ -36,7 +38,8 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 | Integrated high-resolution encoder (48 CPR motor → ~980 CPR output) simplifies odometry/PID control without extra components. | Slightly longer body (65 mm) and 98g weight per motor add up in a compact rover chassis compared to micro options. |
 | Compact 25mm diameter cylindrical form factor fits well in small-to-mid rover designs; metal gears ensure longevity. | Torque is solid but lower than larger 37D motors, so less headroom on very steep slopes or with added payload (e.g., sensors/arm). |
 
- ## Pololu #5223: 250:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Side Connector
+ ### Pololu 5223: 250:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Side Connector
+ 
  ![](Polulu_5223.jpg)
   
  [link to product](https://www.digikey.com/en/products/detail/pololu/5223/22601737?s=N4IgTCBcDaIA4HsA2BXVACArGMBmEAugL5A)
@@ -47,7 +50,7 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 | High stall torque relative to size (~3.0 kg·cm) sufficient for light rovers on flat/moderate terrain with good wheel leverage. | Lower absolute torque limits capability on rougher terrain, steeper inclines, or if rover mass exceeds ~2–3 kg total. |
 | Integrated encoder (12 CPR) + HPCB (high-power carbon brush) motor provides reliable feedback and efficiency in a tiny package; side connector eases wiring in small chassis. | Smaller 3mm D-shaft and micro construction may have more backlash or wear under heavy/continuous use compared to larger metal gearmotors. |
 
-## Optimal Motor Selection: Pololu #4843 (20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder)
+### Optimal Motor Selection: Pololu #4843 (20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder)
 The Pololu #4843 is the optimal choice for the small exploration rover's drive train after comparing it to the #4741 (18.75:1 37D series) and #5223 (250:1 micro HPCB series). It delivers a strong balance of 7.4 kg·cm stall torque and 500 RPM no-load speed at 12 V, enabling reliable performance on moderate terrain (e.g., 15° inclines, light gravel) with practical speeds (~1.5–2.5 m/s using 80–120 mm wheels) and ample margin for a ~2–5 kg rover—outperforming the slower #5223 and avoiding the excessive bulk of the larger #4741. Its integrated 48 CPR encoder (yielding ~980 CPR at output) provides precise odometry and closed-loop control without added components, directly supporting project feedback needs. The compact 25 mm × 65 mm size and ~98 g weight per motor fit a small chassis perfectly, while full metal gears ensure durability and longevity under student testing conditions. Operating efficiently on common 3S LiPo batteries with manageable current draw, and backed by Pololu's excellent documentation and ecosystem, it minimizes risks and integration effort—making it the best overall fit for capability, compactness, reliability, and project practicality compared to the alternatives.
 
 ### Style 1
