@@ -612,14 +612,20 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sensor" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pololu-4843-2041-metal-gearmotor-25dx65l-mm-hp-12v-with-48-cpr-encoder" class="md-nav__link">
     <span class="md-ellipsis">
-      Sensor
+      Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#actuator" class="md-nav__link">
@@ -860,14 +866,20 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#sensor" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pololu-4843-2041-metal-gearmotor-25dx65l-mm-hp-12v-with-48-cpr-encoder" class="md-nav__link">
     <span class="md-ellipsis">
-      Sensor
+      Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#actuator" class="md-nav__link">
@@ -934,9 +946,61 @@
 <h3 id="power-management">Power Management</h3>
 <p>(<strong>remove this note/placeholder</strong>: this is where your 3.3 volt switching regulator, any other needed power regulator, and power source {if applicable} <strong>THAT WERE SELECTED</strong>)</p>
 <p>For more details, review the <a href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#power-management">"Appendix - Component Selection Process - Power Mangement"</a> selection.</p>
-<h3 id="sensor">Sensor</h3>
-<p>(<strong>remove this note/placeholder</strong>: if applicable, this is where your  <strong>SELECTED</strong> sensor is shown. Otherwise, remove this section.)</p>
-<p>For more details, review the <a href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#sensor">"Appendix - Component Selection Process - Sensor"</a> selection.</p>
+<p>## Pololu #4741: 19:1 (actually 18.75:1) Metal Gearmotor 37Dx52L mm 12V 
+ <a href="https://www.digikey.com/en/products/detail/pololu/4741/10450198">link to product</a></p>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High stall torque (~8.5 kg·cm at 12V) provides excellent climbing ability and margin for heavier loads or rough terrain (e.g., gravel, small inclines).</td>
+<td>Larger and heavier (~200–250g each estimated for 37D series) than 25D or micro motors, making the rover bulkier and harder to keep "small/lightweight".</td>
+</tr>
+<tr>
+<td>Helical first-stage gears reduce noise and improve efficiency/smoothness compared to pure spur designs.</td>
+<td>Higher stall current (~5.5A) demands a robust H-bridge/driver (e.g., not marginal with basic dual-channel ICs like DRV8833 at peaks).</td>
+</tr>
+<tr>
+<td>Larger 6mm D-shaft and robust 37mm-diameter build offer superior durability and easier wheel mounting for student projects.</td>
+<td>Lower no-load speed (~530 RPM) results in slower top speed with typical wheels (e.g., ~1.5–2 m/s), which may feel sluggish for flat exploration unless PWM-boosted.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pololu-4843-2041-metal-gearmotor-25dx65l-mm-hp-12v-with-48-cpr-encoder">Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder</h2>
+<p><a href="https://www.digikey.com/en/products/detail/pololu/4843/10450245?s=N4IgTCBcDaIAoHsA2BXVACALADkwZhAF0BfIA">link to product</a>
+| Pros | Cons |
+|------|------|
+| Balanced performance: 7.4 kg·cm stall torque + 500 RPM no-load gives good mix of power for obstacles and decent speed for covering ground quickly. | High stall current (~5A) requires careful driver selection and power supply design to handle peaks without voltage sag or overheating. |
+| Integrated high-resolution encoder (48 CPR motor → ~980 CPR output) simplifies odometry/PID control without extra components. | Slightly longer body (65 mm) and 98g weight per motor add up in a compact rover chassis compared to micro options. |
+| Compact 25mm diameter cylindrical form factor fits well in small-to-mid rover designs; metal gears ensure longevity. | Torque is solid but lower than larger 37D motors, so less headroom on very steep slopes or with added payload (e.g., sensors/arm). |</p>
+<p>## Pololu #5223: 250:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Side Connector
+ <a href="https://www.digikey.com/en/products/detail/pololu/5223/22601737?s=N4IgTCBcDaIA4HsA2BXVACArGMBmEAugL5A">link to product</a></p>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extremely compact (10×12 mm gearbox cross-section, lightweight ~20–30g) ideal for truly miniature/small rovers with tight space/weight constraints.</td>
+<td>Very high gear reduction leads to low no-load speed (~130 RPM), resulting in slow rover movement (e.g., &lt;0.5 m/s with small wheels) — may not suit faster exploration tasks.</td>
+</tr>
+<tr>
+<td>High stall torque relative to size (~3.0 kg·cm) sufficient for light rovers on flat/moderate terrain with good wheel leverage.</td>
+<td>Lower absolute torque limits capability on rougher terrain, steeper inclines, or if rover mass exceeds ~2–3 kg total.</td>
+</tr>
+<tr>
+<td>Integrated encoder (12 CPR) + HPCB (high-power carbon brush) motor provides reliable feedback and efficiency in a tiny package; side connector eases wiring in small chassis.</td>
+<td>Smaller 3mm D-shaft and micro construction may have more backlash or wear under heavy/continuous use compared to larger metal gearmotors.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="actuator">Actuator</h3>
 <p>(<strong>remove this note/placeholder</strong>: if applicable, this is where your <strong>Selected</strong> the actuator items go, which includes both the driver and motor. Otherwise, remove this section.)</p>
 <p>For more details, review the <a href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#actuator">"Appendix - Component Selection Process - Actuator"</a> selection.</p>
