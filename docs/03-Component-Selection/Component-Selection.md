@@ -1,18 +1,10 @@
 ---
-title: Module's Selected Major Components
+title: Drive Train Module's Selected Major Components
 ---
 
-## Module's Selected Major Components
+## Drive Train Module's Selected Major Components
 
 The following sections are the selected major components necessary for  .....
-
->**For each of the following sections, use <ins>one of the two styles</ins> given near the end. *REMOVE THIS NOTE***
-
-### Power Management
-
-(**remove this note/placeholder**: this is where your 3.3 volt switching regulator, any other needed power regulator, and power source {if applicable} **THAT WERE SELECTED**)
-
-For more details, review the ["Appendix - Component Selection Process - Power Mangement"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#power-management) selection.
 
  ### Pololu 4741: 19:1 Metal Gearmotor 37Dx52L mm 12V 
  
@@ -53,37 +45,26 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 ### Optimal Motor Selection: Pololu #4843 (20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder)
 The Pololu #4843 is the optimal choice for the small exploration rover's drive train after comparing it to the #4741 (18.75:1 37D series) and #5223 (250:1 micro HPCB series). It delivers a strong balance of 7.4 kg·cm stall torque and 500 RPM no-load speed at 12 V, enabling reliable performance on moderate terrain (e.g., 15° inclines, light gravel) with practical speeds (~1.5–2.5 m/s using 80–120 mm wheels) and ample margin for a ~2–5 kg rover—outperforming the slower #5223 and avoiding the excessive bulk of the larger #4741. Its integrated 48 CPR encoder (yielding ~980 CPR at output) provides precise odometry and closed-loop control without added components, directly supporting project feedback needs. The compact 25 mm × 65 mm size and ~98 g weight per motor fit a small chassis perfectly, while full metal gears ensure durability and longevity under student testing conditions. Operating efficiently on common 3S LiPo batteries with manageable current draw, and backed by Pololu's excellent documentation and ecosystem, it minimizes risks and integration effort—making it the best overall fit for capability, compactness, reliability, and project practicality compared to the alternatives.
 
-### Style 1
+### Texas Instruments DRV8873 (e.g., DRV8873SPWPR or similar variant; HTSSOP-24 SMD package)
 
-> This is the example found in the assignment, uses more html
+| Pros | Cons |
+|------|------|
+| High current capability (up to 10 A peak, integrated current sensing) handles the 5 A stall comfortably with headroom for spikes during direction changes or loads. | Slightly higher cost compared to basic drivers; may require good PCB thermal design/heatsinking for sustained high-current operation. |
+| Wide voltage range (4.5–38 V) and excellent built-in protections (overcurrent, thermal shutdown, undervoltage lockout, fault reporting) reduce damage risk in student rover testing. | Larger package footprint than ultra-compact options, though still SMD-friendly for custom PCBs. |
+| Integrated features like current-sense output simplify monitoring stall/overload in firmware; popular TI part with good datasheets and examples. | May need external components (e.g., sense resistor) for full current feedback if desired. |
 
-*Table 1: Example component selection*
+### Infineon IFX9201SG (DSO-12 SMD package)
 
-**External Clock Module**
+| Pros | Cons |
+|------|------|
+| Robust 6 A continuous rating (with low RDS(on)) easily manages 5 A stalls; automotive-grade reliability for durable rover use on varied terrain. | Single half-bridge design means two ICs needed for a full H-bridge (or dual setup for 2 motors), increasing component count and PCB space slightly. |
+| Wide 5–36 V range, integrated protections (overtemperature, short-circuit, UVLO, current limiting), and SPI diagnostics or simple error flag for easy debugging. | Higher unit cost; less common in hobby/student examples compared to TI parts, though well-documented. |
+| Compact, small SMD package with few external components needed; efficient for battery-powered rovers. | Requires careful gate drive/logic interfacing (3.3–5 V compatible but check levels). |
 
-| **Component**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ![](image1.png)<br> XC1259TR-ND surface mount crystal<br>$1/each<br>[link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)                 | \* Inexpensive[^1]<br>\* Compatible with PSoC<br>\* Meets surface mount constraint of project                                               | \* Requires external components and support circuitry for interface<br>\* Needs special PCB layout. |
+### Texas Instruments DRV8962 (e.g., DRV8962DDWR; HTSSOP-28 SMD package)
 
-**Rationale:** A clock oscillator is easier ....
-
-### Style 2
-
-> Also acceptable, more markdown friendly
-
-**External Clock Module**
-
-1. XC1259TR-ND surface mount crystal
-
-    ![](image1.png)
-
-    * $1/each
-    * [link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)
-
-    | Pros                                      | Cons                                                             |
-    | ----------------------------------------- | ---------------------------------------------------------------- |
-    | Inexpensive                               | Requires external components and support circuitry for interface |
-    | Compatible with PSoC                      | Needs special PCB layout.                                        |
-    | Meets surface mount constraint of project |
-
-**Rationale:** A clock oscillator is easier ...
+| Pros | Cons |
+|------|------|
+| Strong 5 A continuous / 8 A peak rating provides excellent margin for the motor's 5 A stall and dynamic loads; wide 4.5–65 V support. | Larger package and potentially higher power dissipation under heavy load (needs good PCB layout/thermal vias). |
+| Full H-bridge (or configurable) with integrated protections (overcurrent, thermal, undervoltage) and PWM compatibility; suitable for brushed DC in rover differential drive. | May be overkill (higher voltage range) for a strict 12 V setup, adding minor cost/complexity. |
+| Good availability on DigiKey, detailed TI datasheets, and features like fault monitoring for reliable student projects. | Slightly more pins/complexity in layout compared to simpler dual-channel alternatives. |
