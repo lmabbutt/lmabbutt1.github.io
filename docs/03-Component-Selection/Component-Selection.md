@@ -14,7 +14,8 @@ The following sections are the selected major components necessary for  .....
 
 For more details, review the ["Appendix - Component Selection Process - Power Mangement"](https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/#power-management) selection.
 
- ## Pololu #4741: 19:1 (actually 18.75:1) Metal Gearmotor 37Dx52L mm 12V 
+ ## Pololu #4741: 19:1 Metal Gearmotor 37Dx52L mm 12V 
+ ![](Polulu_4741.jpg)
  [link to product](https://www.digikey.com/en/products/detail/pololu/4741/10450198)
 
 | Pros | Cons |
@@ -24,6 +25,7 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 | Larger 6mm D-shaft and robust 37mm-diameter build offer superior durability and easier wheel mounting for student projects. | Lower no-load speed (~530 RPM) results in slower top speed with typical wheels (e.g., ~1.5–2 m/s), which may feel sluggish for flat exploration unless PWM-boosted. |
 
 ## Pololu #4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder
+ ![](Polulu_4843.jpg)
 [link to product](https://www.digikey.com/en/products/detail/pololu/4843/10450245?s=N4IgTCBcDaIAoHsA2BXVACALADkwZhAF0BfIA)
 | Pros | Cons |
 |------|------|
@@ -32,6 +34,7 @@ For more details, review the ["Appendix - Component Selection Process - Power Ma
 | Compact 25mm diameter cylindrical form factor fits well in small-to-mid rover designs; metal gears ensure longevity. | Torque is solid but lower than larger 37D motors, so less headroom on very steep slopes or with added payload (e.g., sensors/arm). |
 
  ## Pololu #5223: 250:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Side Connector
+  ![](Polulu_5223.jpg)
  [link to product](https://www.digikey.com/en/products/detail/pololu/5223/22601737?s=N4IgTCBcDaIA4HsA2BXVACArGMBmEAugL5A)
 
 | Pros | Cons |
