@@ -657,6 +657,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#my-role-on-the-team-actuation-subsystem-responsibilities-and-microcontroller-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Role on the Team, Actuation Subsystem Responsibilities, and Microcontroller Selection
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -914,6 +923,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#my-role-on-the-team-actuation-subsystem-responsibilities-and-microcontroller-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Role on the Team, Actuation Subsystem Responsibilities, and Microcontroller Selection
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -945,7 +963,7 @@
   <h1>Drive Train Module's Selected Major Components</h1>
 
 <h2 id="drive-train-modules-selected-major-components">Drive Train Module's Selected Major Components</h2>
-<p>The following sections are the selected major components necessary for  .....</p>
+<p>The following sections are the selected major components necessary for the drive train subsystem of my teams project.</p>
 <p>### Pololu 4741: 19:1 Metal Gearmotor 37Dx52L mm 12V </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Polulu_4741.jpg" data-desc-position="bottom"><img alt="" src="../Polulu_4741.jpg"></a></p>
 <p><a href="https://www.digikey.com/en/products/detail/pololu/4741/10450198">link to product</a></p>
@@ -1100,6 +1118,8 @@
 </table>
 <h3 id="optimal-h-bridge-selection-infineon-ifx9201sg-dso-12-smd-package">Optimal H-Bridge Selection: Infineon IFX9201SG (DSO-12 SMD Package)</h3>
 <p>The Infineon IFX9201SG is selected as the optimal H-bridge driver for the Pololu #4843 motor (12 V nominal, 5 A stall current) in the small exploration rover's drive train subsystem. It offers a robust 6 A continuous current rating, providing comfortable headroom and reliable handling of the motor's 5 A stall peaks during startups, direction changes, or terrain obstacles—avoiding the thermal risks or current limiting issues common with lower-rated drivers like the DRV8833. Its wide 4.5–36 V operating range perfectly matches 12 V battery supplies, while integrated protections (overtemperature, short-circuit, undervoltage lockout, and current limiting) enhance safety and reduce failure risks in prototyping. The compact DSO-12 SMD package complies with EGR 314 surface-mount requirements for custom PCBs, requires minimal external components, and supports PWM/DIR control with 3.3 V/5 V logic compatibility for easy MCU integration. Backed by Infineon's automotive-grade reliability, detailed datasheets, and low standby current for battery efficiency, it outperforms simpler alternatives in durability and margin for the rover's moderate loads, making it a strong, dependable choice for reliable bidirectional motor control.</p>
+<h3 id="my-role-on-the-team-actuation-subsystem-responsibilities-and-microcontroller-selection">My Role on the Team, Actuation Subsystem Responsibilities, and Microcontroller Selection</h3>
+<p>As the Actuation Subsystem member for our small exploration rover group project, I focus on the design, selection, integration, and control of the rover's motion and drive capabilities, centered around the two Pololu #4843 motors and the Infineon IFX9201SG H-bridge drivers, with the ESP32-S3-WROOM-1-N4 microcontroller providing the PWM signals, control logic, and communication functionality. My primary responsibilities include selecting and justifying the motors (Pololu #4843 for their balanced 7.4 kg·cm stall torque, 500 RPM no-load speed, integrated 48 CPR encoders, and compact metal-gear construction suited to a ~2–5 kg rover on moderate terrain) and the H-bridge (IFX9201SG for its robust 6 A continuous rating, wide 4.5–36 V range, integrated protections against overcurrent/thermal/short-circuit, and compact DSO-12 SMD package compliant with EGR 314 surface-mount requirements). I handle the actuation block in the system diagram, ensuring reliable bidirectional PWM control for differential drive, precise speed and direction commands from the ESP32-S3's MCPWM peripheral, and closed-loop feedback using the motor encoders to achieve accurate odometry and smooth navigation. This includes verifying current handling for the motor's ~5 A stall peaks, designing appropriate power routing and protection, and collaborating on firmware interfaces for torque/speed limiting to prevent damage during testing or obstacle encounters. By designing the actuation subsystem end-to-end—from component tables and rationale to wiring, PCB integration considerations, and basic control tuning—I ensure the rover can move reliably, responsively, and efficiently across the intended exploration environments while meeting all assignment specifications for off-the-shelf solutions, documentation, and reliability.</p>
 
 
 
