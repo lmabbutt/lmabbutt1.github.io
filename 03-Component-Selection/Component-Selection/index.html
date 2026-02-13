@@ -648,6 +648,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#optimal-h-bridge-selection-infineon-ifx9201sg-dso-12-smd-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal H-Bridge Selection: Infineon IFX9201SG (DSO-12 SMD Package)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -896,6 +905,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#optimal-h-bridge-selection-infineon-ifx9201sg-dso-12-smd-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal H-Bridge Selection: Infineon IFX9201SG (DSO-12 SMD Package)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1006,6 +1024,8 @@
 <h3 id="optimal-motor-selection-pololu-4843-2041-metal-gearmotor-25dx65l-mm-hp-12v-with-48-cpr-encoder">Optimal Motor Selection: Pololu #4843 (20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder)</h3>
 <p>The Pololu #4843 is the optimal choice for the small exploration rover's drive train after comparing it to the #4741 (18.75:1 37D series) and #5223 (250:1 micro HPCB series). It delivers a strong balance of 7.4 kg·cm stall torque and 500 RPM no-load speed at 12 V, enabling reliable performance on moderate terrain (e.g., 15° inclines, light gravel) with practical speeds (~1.5–2.5 m/s using 80–120 mm wheels) and ample margin for a ~2–5 kg rover—outperforming the slower #5223 and avoiding the excessive bulk of the larger #4741. Its integrated 48 CPR encoder (yielding ~980 CPR at output) provides precise odometry and closed-loop control without added components, directly supporting project feedback needs. The compact 25 mm × 65 mm size and ~98 g weight per motor fit a small chassis perfectly, while full metal gears ensure durability and longevity under student testing conditions. Operating efficiently on common 3S LiPo batteries with manageable current draw, and backed by Pololu's excellent documentation and ecosystem, it minimizes risks and integration effort—making it the best overall fit for capability, compactness, reliability, and project practicality compared to the alternatives.</p>
 <h3 id="texas-instruments-drv8873-eg-drv8873spwpr-or-similar-variant-htssop-24-smd-package">Texas Instruments DRV8873 (e.g., DRV8873SPWPR or similar variant; HTSSOP-24 SMD package)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../DRV8833PWR.jpg" data-desc-position="bottom"><img alt="" src="../DRV8833PWR.jpg"></a></p>
+<p><a href="https://www.digikey.com/en/products/detail/texas-instruments/DRV8833PWR/4251166">link to product</a></p>
 <table>
 <thead>
 <tr>
@@ -1029,6 +1049,8 @@
 </tbody>
 </table>
 <h3 id="infineon-ifx9201sg-dso-12-smd-package">Infineon IFX9201SG (DSO-12 SMD package)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../IFX9201SGAUMA1.jpg" data-desc-position="bottom"><img alt="" src="../IFX9201SGAUMA1.jpg"></a></p>
+<p><a href="https://www.digikey.com/en/products/detail/infineon-technologies/IFX9201SGAUMA1/5415542">link to product</a></p>
 <table>
 <thead>
 <tr>
@@ -1052,6 +1074,8 @@
 </tbody>
 </table>
 <h3 id="texas-instruments-drv8962-eg-drv8962ddwr-htssop-28-smd-package">Texas Instruments DRV8962 (e.g., DRV8962DDWR; HTSSOP-28 SMD package)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../DRV8962DDWR.jpg" data-desc-position="bottom"><img alt="" src="../DRV8962DDWR.jpg"></a></p>
+<p><a href="https://www.digikey.com/en/products/detail/texas-instruments/DRV8962DDWR/18724317">link to product</a></p>
 <table>
 <thead>
 <tr>
@@ -1074,6 +1098,8 @@
 </tr>
 </tbody>
 </table>
+<h3 id="optimal-h-bridge-selection-infineon-ifx9201sg-dso-12-smd-package">Optimal H-Bridge Selection: Infineon IFX9201SG (DSO-12 SMD Package)</h3>
+<p>The Infineon IFX9201SG is selected as the optimal H-bridge driver for the Pololu #4843 motor (12 V nominal, 5 A stall current) in the small exploration rover's drive train subsystem. It offers a robust 6 A continuous current rating, providing comfortable headroom and reliable handling of the motor's 5 A stall peaks during startups, direction changes, or terrain obstacles—avoiding the thermal risks or current limiting issues common with lower-rated drivers like the DRV8833. Its wide 4.5–36 V operating range perfectly matches 12 V battery supplies, while integrated protections (overtemperature, short-circuit, undervoltage lockout, and current limiting) enhance safety and reduce failure risks in prototyping. The compact DSO-12 SMD package complies with EGR 314 surface-mount requirements for custom PCBs, requires minimal external components, and supports PWM/DIR control with 3.3 V/5 V logic compatibility for easy MCU integration. Backed by Infineon's automotive-grade reliability, detailed datasheets, and low standby current for battery efficiency, it outperforms simpler alternatives in durability and margin for the rover's moderate loads, making it a strong, dependable choice for reliable bidirectional motor control.</p>
 
 
 
