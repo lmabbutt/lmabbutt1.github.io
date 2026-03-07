@@ -18,10 +18,7 @@ An external **H-bridge motor driver** interfaces between the PIC and the DC moto
 Overall, this architecture provides a modular, robust, and scalable solution for robotic drivetrain control by cleanly separating communication, control, and power stages.
 
 
-To get some initial formatting help, one can view ["here"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/) some basic techniques.
+## Block Diagram 
+Here is the block diagram for my substystem.
 
-
-## Example Block Diagram 
-Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.
-
-![Example of Indivial Block diagram ](INDIVIDUALBLOCKDIAGRAM.png)
+![Block diagram ](bd.png)
