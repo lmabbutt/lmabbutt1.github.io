@@ -4,7 +4,7 @@ title: Module Schematic
 
 ## Overview
 
-This schematic is design to support .... (highlight functionally, power, and controller).
+Below is the schematic design for the drivetrain subsystem. Its consists of an ESP32 microcontroller, two h bridges for controlling the two motors, an extra pin header, a debug LED, and up/downstream UART connections.
 
 
 ![schematic](schematicpng.png){style width:"350" height:"300;"}
@@ -13,4 +13,4 @@ This schematic is design to support .... (highlight functionally, power, and con
 
 ## Resouces
 
-The schematic as a PDF download is available [*here*](Schematicpdf.pdf), and the Zip folder of the project [*here*](dummyZip.zip).
+The schematic as a PDF download is available [*here*](Schematicpdf.pdf), and the Zip folder of the project [*here*](zip.zip).
