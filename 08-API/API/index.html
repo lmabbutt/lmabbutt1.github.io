@@ -26,7 +26,7 @@
 
     
       
-        <title>API - Liam Mabbutt's Datasheet</title>
+        <title>Motor Controller — Message Datasheet - Liam Mabbutt's Datasheet</title>
       
     
     
@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#motor-controller-message-datasheet" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -120,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API
+              Motor Controller — Message Datasheet
             
           </span>
         </div>
@@ -711,16 +716,102 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Motor Controller — Message Datasheet
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    API
+    Motor Controller — Message Datasheet
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#message-type-1-motor-control-state-report-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 1 — Motor Control State Report 🔵 Send
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-2-motor-status-report-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 2 — Motor Status Report 🔵 Send
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-13-system-status-report-receive-act-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 13 — System Status Report 🟢 Receive / Act On
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-14-system-error-code-report-send-receive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 14 — System Error Code Report 🟡 Send &amp; Receive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-items-for-team-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Items for Team Resolution
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -807,6 +898,70 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#message-type-1-motor-control-state-report-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 1 — Motor Control State Report 🔵 Send
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-2-motor-status-report-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 2 — Motor Status Report 🔵 Send
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-13-system-status-report-receive-act-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 13 — System Status Report 🟢 Receive / Act On
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-14-system-error-code-report-send-receive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 14 — System Error Code Report 🟡 Send &amp; Receive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-items-for-team-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Items for Team Resolution
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -829,9 +984,398 @@
   
 
 
-  <h1>API</h1>
-
-
+<h1 id="motor-controller-message-datasheet">Motor Controller — Message Datasheet</h1>
+<p><strong>Network:</strong> UART daisy-chain<br>
+<strong>Data types:</strong> MicroPython / C<br>
+<strong>Byte order:</strong> Little-endian for all multi-byte fields</p>
+<table>
+<thead>
+<tr>
+<th>Legend</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔵 Send</td>
+<td>This board transmits the message</td>
+</tr>
+<tr>
+<td>🟢 Receive</td>
+<td>This board listens and acts on the message</td>
+</tr>
+<tr>
+<td>🟡 Both</td>
+<td>This board sends and receives this message</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-1-motor-control-state-report-send">Message Type 1 — Motor Control State Report 🔵 Send</h2>
+<p>Broadcast by the motor controller to report commanded motor states.</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>C Type</th>
+<th>Bytes</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td><code>message_type</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td><code>1</code></td>
+<td>Always 1 for this message</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td><code>left_motor_speed</code></td>
+<td><code>int16_t</code></td>
+<td>2</td>
+<td>-255</td>
+<td>255</td>
+<td><code>-200</code></td>
+<td>PWM duty cycle; negative = reverse ⚠️ <em>team must confirm range</em></td>
+</tr>
+<tr>
+<td>5–6</td>
+<td><code>right_motor_speed</code></td>
+<td><code>int16_t</code></td>
+<td>2</td>
+<td>-255</td>
+<td>255</td>
+<td><code>200</code></td>
+<td>PWM duty cycle; negative = reverse ⚠️ <em>team must confirm range</em></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>left_motor_dir</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><code>0</code></td>
+<td>0 = reverse, 1 = forward</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>right_motor_dir</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><code>1</code></td>
+<td>0 = reverse, 1 = forward</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total payload:</strong> 8 bytes</p>
+<blockquote>
+<p>⚠️ <strong>Missing from team table:</strong> No payload length field or checksum/CRC — recommend adding for UART reliability.</p>
+<p>⚠️ <strong>Redundancy concern:</strong> Direction is encoded twice — via the sign of <code>int16_t</code> speed AND via the direction byte. Team should decide: use sign of <code>int16_t</code> only, or use unsigned speed + direction byte exclusively.</p>
+</blockquote>
+<hr>
+<h2 id="message-type-2-motor-status-report-send">Message Type 2 — Motor Status Report 🔵 Send</h2>
+<p>Periodic report of measured motor operating conditions sent by this board.</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>C Type</th>
+<th>Bytes</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td><code>message_type</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td><code>2</code></td>
+<td>Always 2 for this message</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td><code>left_motor_current_ma</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>0</td>
+<td>5000</td>
+<td><code>1200</code></td>
+<td>Measured current in mA; <code>uint16_t</code> supports 0–65535</td>
+</tr>
+<tr>
+<td>5–6</td>
+<td><code>right_motor_current_ma</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>0</td>
+<td>5000</td>
+<td><code>1350</code></td>
+<td>Measured current in mA</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>left_motor_status</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td><code>0</code></td>
+<td>Status code ⚠️ <em>team must define code table</em></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>right_motor_status</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td><code>0</code></td>
+<td>Status code ⚠️ <em>team must define code table</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total payload:</strong> 8 bytes</p>
+<blockquote>
+<p>⚠️ <strong>Missing from team table:</strong> No actual motor RPM or encoder feedback field. If encoders are present, a <code>uint16_t rpm</code> field per motor is recommended for closed-loop control.</p>
+<p>⚠️ <strong>Motor status codes are undefined.</strong> Suggested definitions:
+- <code>0</code> = OK
+- <code>1</code> = Stalled
+- <code>2</code> = Overcurrent
+- <code>3</code> = Fault</p>
+</blockquote>
+<hr>
+<h2 id="message-type-13-system-status-report-receive-act-on">Message Type 13 — System Status Report 🟢 Receive / Act On</h2>
+<p>Broadcast from the main controller. The motor controller monitors system state and battery voltage to adjust behavior (e.g., emergency stop, low-battery throttling).</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>C Type</th>
+<th>Bytes</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td><code>message_type</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>13</td>
+<td>13</td>
+<td><code>13</code></td>
+<td>Filter on this value to identify message</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>system_state</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td><code>1</code></td>
+<td>Act on this: stop motors if state = emergency stop ⚠️ <em>state codes undefined</em></td>
+</tr>
+<tr>
+<td>4–7</td>
+<td><code>uptime_ms</code></td>
+<td><code>uint32_t</code></td>
+<td>4</td>
+<td>0</td>
+<td>4294967295</td>
+<td><code>12400</code></td>
+<td>Informational; can ignore or log</td>
+</tr>
+<tr>
+<td>8–9</td>
+<td><code>battery_voltage_mv</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>0</td>
+<td>65535</td>
+<td><code>11800</code></td>
+<td>Act on this: throttle motors if battery low ⚠️ <em>team must define low-voltage threshold</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total payload:</strong> 9 bytes</p>
+<blockquote>
+<p>⚠️ <strong>Missing from team table:</strong> <code>system_state</code> codes are not defined. The motor controller must know which value triggers an emergency stop vs. normal operation.</p>
+</blockquote>
+<hr>
+<h2 id="message-type-14-system-error-code-report-send-receive">Message Type 14 — System Error Code Report 🟡 Send &amp; Receive</h2>
+<p>Sent by this board to report motor faults; also received from other subsystems to monitor overall system health.</p>
+<table>
+<thead>
+<tr>
+<th>Byte(s)</th>
+<th>Variable Name</th>
+<th>C Type</th>
+<th>Bytes</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td><code>message_type</code></td>
+<td><code>uint16_t</code></td>
+<td>2</td>
+<td>14</td>
+<td>14</td>
+<td><code>14</code></td>
+<td>Always 14 for this message</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>subsystem_id</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td><code>2</code></td>
+<td>When sending: use this board's assigned ID ⚠️ <em>team must assign subsystem IDs</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>error_code</code></td>
+<td><code>uint8_t</code></td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td><code>2</code></td>
+<td>When sending: motor fault code ⚠️ <em>team must define error code table</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total payload:</strong> 4 bytes</p>
+<blockquote>
+<p>⚠️ <strong>Missing from team table:</strong> No subsystem ID assignments. This board needs a unique <code>subsystem_id</code> to identify itself when sending errors.</p>
+<p>⚠️ <strong>Error codes are undefined.</strong> Suggested definitions:
+- <code>0</code> = None
+- <code>1</code> = Left motor stall
+- <code>2</code> = Right motor stall
+- <code>3</code> = Left motor overcurrent
+- <code>4</code> = Right motor overcurrent
+- <code>5</code> = Communication timeout</p>
+</blockquote>
+<hr>
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Direction</th>
+<th>Total Payload Bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type 1 — Motor control state report</td>
+<td>🔵 Send</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Type 2 — Motor status report</td>
+<td>🔵 Send</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Type 13 — System status report</td>
+<td>🟢 Receive</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Type 14 — System error code report</td>
+<td>🟡 Both</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="open-items-for-team-resolution">Open Items for Team Resolution</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Issue</th>
+<th>Affects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Confirm PWM speed range (currently assumed -255 to 255)</td>
+<td>Type 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Resolve direction encoding redundancy (sign vs. direction byte)</td>
+<td>Type 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Define motor status codes (0=OK, 1=stall, etc.)</td>
+<td>Type 2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Add RPM/encoder feedback fields if using closed-loop control</td>
+<td>Type 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Define <code>system_state</code> code values (especially emergency stop)</td>
+<td>Type 13</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Define low-battery voltage threshold for motor throttling</td>
+<td>Type 13</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Assign unique <code>subsystem_id</code> to the motor controller board</td>
+<td>Type 14</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Define error code table for motor faults</td>
+<td>Type 14</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Add payload length and CRC/checksum to all messages</td>
+<td>All</td>
+</tr>
+</tbody>
+</table>
 
 
 
