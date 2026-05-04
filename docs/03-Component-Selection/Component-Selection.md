@@ -1,88 +1,128 @@
+# Drive Train Module: Updated Component Selection
+
+## Overview
+
+This page documents the final component selections for the Drive Train subsystem of the Team 305 small exploration rover. Selections have been updated from the initial submission to reflect decisions made during PCB design, firmware development, and integration with the team's UART communication bus. Key changes include the finalisation of the motor selection at 9V operation (revised from the initial 12V nominal assumption), confirmation of the IFX9201SG H-bridge with full SPI diagnostic integration, and the addition of the TPS563201DDCT switching regulator as a dedicated power regulation component.
+
 ---
-title: Drive Train Module's Selected Major Components
+
+## Final Major Components Summary Table
+
+| Component | Part Number | Function | Supplier |
+|---|---|---|---|
+| Microcontroller Module | ESP32-S3-WROOM-1-N4 | Central controller (PWM, SPI, UART, USB) | DigiKey |
+| H-Bridge Motor Driver | IFX9201SGAUMA1 | Bidirectional motor control with SPI diagnostics | DigiKey |
+| DC Gearmotor with Encoder | Pololu 4843 | Drive wheel actuation and speed feedback | DigiKey |
+| Switching Voltage Regulator | TPS563201DDCT | 9V to 3.3V regulation for ESP32 | DigiKey |
+| USB-C Receptacle | GCT USB4085-GF-A | Firmware programming interface | DigiKey |
+| Barrel Jack Connector | Würth 694106301002 | 9V power input | DigiKey |
+| Resettable Fuse | Bourns MF-MSMF300/12 | Overcurrent protection on 9V input rail | DigiKey |
+
 ---
 
-## Drive Train Module's Selected Major Components
-
-The following sections are the selected major components necessary for the drive train subsystem of my teams project.
-
- ### Pololu 4741: 19:1 Metal Gearmotor 37Dx52L mm 12V 
- 
- ![](Polulu_4741.jpg)
- 
- [link to product](https://www.digikey.com/en/products/detail/pololu/4741/10450198)
-
-| Pros | Cons |
-|------|------|
-| High stall torque (~8.5 kg·cm at 12V) provides excellent climbing ability and margin for heavier loads or rough terrain (e.g., gravel, small inclines). | Larger and heavier (~200–250g each estimated for 37D series) than 25D or micro motors, making the rover bulkier and harder to keep "small/lightweight". |
-| Helical first-stage gears reduce noise and improve efficiency/smoothness compared to pure spur designs. | Higher stall current (~5.5A) demands a robust H-bridge/driver (e.g., not marginal with basic dual-channel ICs like DRV8833 at peaks). |
-| Larger 6mm D-shaft and robust 37mm-diameter build offer superior durability and easier wheel mounting for student projects. | Lower no-load speed (~530 RPM) results in slower top speed with typical wheels (e.g., ~1.5–2 m/s), which may feel sluggish for flat exploration unless PWM-boosted. |
+## Component Selection Rationale
 
 ### Pololu 4843: 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder
 
 ![](Polulu_4843.jpg)
 
-[link to product](https://www.digikey.com/en/products/detail/pololu/4843/10450245?s=N4IgTCBcDaIAoHsA2BXVACALADkwZhAF0BfIA)
+[Link to product](https://www.digikey.com/en/products/detail/pololu/4843/10450245)
 
 | Pros | Cons |
-|------|------|
-| Balanced performance: 7.4 kg·cm stall torque + 500 RPM no-load gives good mix of power for obstacles and decent speed for covering ground quickly. | High stall current (~5A) requires careful driver selection and power supply design to handle peaks without voltage sag or overheating. |
-| Integrated high-resolution encoder (48 CPR motor → ~980 CPR output) simplifies odometry/PID control without extra components. | Slightly longer body (65 mm) and 98g weight per motor add up in a compact rover chassis compared to micro options. |
-| Compact 25mm diameter cylindrical form factor fits well in small-to-mid rover designs; metal gears ensure longevity. | Torque is solid but lower than larger 37D motors, so less headroom on very steep slopes or with added payload (e.g., sensors/arm). |
+|---|---|
+| Balanced performance: 7.4 kg·cm stall torque and 500 RPM no-load speed gives good mix of power and speed for moderate terrain | High stall current (~5A at 12V, ~3.75A at 9V) requires careful driver and power supply design |
+| Integrated high-resolution encoder (48 CPR motor, approximately 980 CPR output) enables closed-loop PID control without extra components | Slightly longer body (65mm) and 98g per motor adds up in a compact chassis |
+| Compact 25mm diameter cylindrical form factor fits small-to-mid rover designs; metal gears ensure longevity | Lower torque headroom than larger 37D motors on very steep slopes or with heavy payload |
 
- ### Pololu 5223: 250:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Side Connector
- 
- ![](Polulu_5223.jpg)
-  
- [link to product](https://www.digikey.com/en/products/detail/pololu/5223/22601737?s=N4IgTCBcDaIA4HsA2BXVACArGMBmEAugL5A)
+**Decision update:** The motor is operated at **9V** rather than the nominal 12V following integration with the team's 9V power architecture. At 9V the motor delivers approximately 75% of rated speed and reduced stall current (~3.75A), which fits more comfortably within the IFX9201SG's 6A continuous rating and reduces thermal stress on the H-bridge. This trade-off was accepted as the reduced speed remains adequate for the rover's intended exploration tasks, and the lower current draw improves battery life and overall system stability.
 
-| Pros | Cons |
-|------|------|
-| Extremely compact (10×12 mm gearbox cross-section, lightweight ~20–30g) ideal for truly miniature/small rovers with tight space/weight constraints. | Very high gear reduction leads to low no-load speed (~130 RPM), resulting in slow rover movement (e.g., <0.5 m/s with small wheels) — may not suit faster exploration tasks. |
-| High stall torque relative to size (~3.0 kg·cm) sufficient for light rovers on flat/moderate terrain with good wheel leverage. | Lower absolute torque limits capability on rougher terrain, steeper inclines, or if rover mass exceeds ~2–3 kg total. |
-| Integrated encoder (12 CPR) + HPCB (high-power carbon brush) motor provides reliable feedback and efficiency in a tiny package; side connector eases wiring in small chassis. | Smaller 3mm D-shaft and micro construction may have more backlash or wear under heavy/continuous use compared to larger metal gearmotors. |
+**How it meets requirements:** The Pololu 4843 directly satisfies the motor type compatibility requirement for high-efficiency DC gear motors, and its integrated encoder enables the closed-loop speed control target requirement. The 7.4 kg·cm stall torque provides sufficient margin for the rover's estimated 2 to 5 kg mass on moderate terrain including small inclines and light gravel.
 
-### Optimal Motor Selection: Pololu #4843 (20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder)
-The Pololu #4843 is the optimal choice for the small exploration rover's drive train after comparing it to the #4741 (18.75:1 37D series) and #5223 (250:1 micro HPCB series). It delivers a strong balance of 7.4 kg·cm stall torque and 500 RPM no-load speed at 12 V, enabling reliable performance on moderate terrain (e.g., 15° inclines, light gravel) with practical speeds (~1.5–2.5 m/s using 80–120 mm wheels) and ample margin for a ~2–5 kg rover—outperforming the slower #5223 and avoiding the excessive bulk of the larger #4741. Its integrated 48 CPR encoder (yielding ~980 CPR at output) provides precise odometry and closed-loop control without added components, directly supporting project feedback needs. The compact 25 mm × 65 mm size and ~98 g weight per motor fit a small chassis perfectly, while full metal gears ensure durability and longevity under student testing conditions. Operating efficiently on common 3S LiPo batteries with manageable current draw, and backed by Pololu's excellent documentation and ecosystem, it minimizes risks and integration effort—making it the best overall fit for capability, compactness, reliability, and project practicality compared to the alternatives.
+---
 
-### Texas Instruments DRV8873 (e.g., DRV8873SPWPR or similar variant; HTSSOP-24 SMD package)
- 
- ![](DRV8833PWR.jpg)
- 
- [link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8833PWR/4251166)
+### Infineon IFX9201SGAUMA1: 6A H-Bridge with SPI (PG-DSO-12-17 Package)
+
+![](IFX9201SGAUMA1.jpg)
+
+[Link to product](https://www.digikey.com/en/products/detail/infineon-technologies/IFX9201SGAUMA1/5415542)
 
 | Pros | Cons |
-|------|------|
-| High current capability (up to 10 A peak, integrated current sensing) handles the 5 A stall comfortably with headroom for spikes during direction changes or loads. | Slightly higher cost compared to basic drivers; may require good PCB thermal design/heatsinking for sustained high-current operation. |
-| Wide voltage range (4.5–38 V) and excellent built-in protections (overcurrent, thermal shutdown, undervoltage lockout, fault reporting) reduce damage risk in student rover testing. | Larger package footprint than ultra-compact options, though still SMD-friendly for custom PCBs. |
-| Integrated features like current-sense output simplify monitoring stall/overload in firmware; popular TI part with good datasheets and examples. | May need external components (e.g., sense resistor) for full current feedback if desired. |
+|---|---|
+| Robust 6A continuous rating provides comfortable headroom over the motor's 3.75A operating current at 9V | Requires VSO pin connected to 3.3V to power the SPI output buffer. Omitting this disables SPI readback |
+| Full SPI diagnostic register provides fault reporting including overcurrent, overtemperature, short circuit to GND/VS, and undervoltage | CSN pin has an internal pullup. If left floating the IC enters SPI mode and ignores PWM/DIR inputs |
+| Hardware protections operate independently of firmware. Chopper current limiting, thermal shutdown, and short circuit latch all function without MCU involvement | Heat slug must be soldered to GND plane for both electrical and thermal operation. A floating heat slug prevents correct IC operation |
+| PWM/DIR control mode reduces GPIO requirements; SPI mode adds full diagnostic capability | Single H-bridge per IC, so one IC per motor is required |
 
-### Infineon IFX9201SG (DSO-12 SMD package)
+**Decision update:** During hardware bring-up it was discovered that the CSN pin must be driven high by the ESP32 at startup to place the IC in PWM/DIR mode, and that VSO must be connected to 3.3V to enable SPI readback. These were not implemented in the initial schematic and have been corrected in the final PCB design. Full SPI communication is now implemented in firmware using the IFX9201SG's 8-bit register interface, providing real-time fault monitoring via the diagnosis register.
 
- ![](IFX9201SGAUMA1.jpg)
- 
- [link to product](https://www.digikey.com/en/products/detail/infineon-technologies/IFX9201SGAUMA1/5415542)
+**How it meets requirements:** The IFX9201SG satisfies the motor driver requirement for an integrated driver with protection, exceeding the threshold by providing both hardware and software interlock capability. The DIS pin provides a hardware disable path meeting the safety interlock requirement, and the SPI diagnosis register provides current and fault feedback meeting the motor feedback sensing requirement.
 
-| Pros | Cons |
-|------|------|
-| Robust 6 A continuous rating (with low RDS(on)) easily manages 5 A stalls; automotive-grade reliability for durable rover use on varied terrain. | Single half-bridge design means two ICs needed for a full H-bridge (or dual setup for 2 motors), increasing component count and PCB space slightly. |
-| Wide 5–36 V range, integrated protections (overtemperature, short-circuit, UVLO, current limiting), and SPI diagnostics or simple error flag for easy debugging. | Higher unit cost; less common in hobby/student examples compared to TI parts, though well-documented. |
-| Compact, small SMD package with few external components needed; efficient for battery-powered rovers. | Requires careful gate drive/logic interfacing (3.3–5 V compatible but check levels). |
+---
 
-### Texas Instruments DRV8962 (e.g., DRV8962DDWR; HTSSOP-28 SMD package)
-
- ![](DRV8962DDWR.jpg)
- 
- [link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8962DDWR/18724317)
+### Texas Instruments TPS563201DDCT: 3A Synchronous Step-Down Converter (SOT-23-6)
 
 | Pros | Cons |
-|------|------|
-| Strong 5 A continuous / 8 A peak rating provides excellent margin for the motor's 5 A stall and dynamic loads; wide 4.5–65 V support. | Larger package and potentially higher power dissipation under heavy load (needs good PCB layout/thermal vias). |
-| Full H-bridge (or configurable) with integrated protections (overcurrent, thermal, undervoltage) and PWM compatibility; suitable for brushed DC in rover differential drive. | May be overkill (higher voltage range) for a strict 12 V setup, adding minor cost/complexity. |
-| Good availability on DigiKey, detailed TI datasheets, and features like fault monitoring for reliable student projects. | Slightly more pins/complexity in layout compared to simpler dual-channel alternatives. |
+|---|---|
+| Regulated 3.3V output from 9V input with up to 90%+ efficiency, which is far superior to a linear regulator | Fixed 500kHz switching frequency requires careful PCB layout to minimise switching noise |
+| D-CAP2 control mode requires no external compensation components, which simplifies design | Feedback resistor divider must use 1% tolerance resistors for accurate output voltage |
+| Up to 3A output current, well above the ESP32's maximum draw | VBST cap placement is critical and must be adjacent to the IC for correct high-side gate drive |
+| Internal soft-start, UVLO, overcurrent, and thermal protection | SOT-23-6 package is small and requires care during hand soldering |
 
-### Optimal H-Bridge Selection: Infineon IFX9201SG (DSO-12 SMD Package)
-The Infineon IFX9201SG is selected as the optimal H-bridge driver for the Pololu #4843 motor (12 V nominal, 5 A stall current) in the small exploration rover's drive train subsystem. It offers a robust 6 A continuous current rating, providing comfortable headroom and reliable handling of the motor's 5 A stall peaks during startups, direction changes, or terrain obstacles—avoiding the thermal risks or current limiting issues common with lower-rated drivers like the DRV8833. Its wide 4.5–36 V operating range perfectly matches 12 V battery supplies, while integrated protections (overtemperature, short-circuit, undervoltage lockout, and current limiting) enhance safety and reduce failure risks in prototyping. The compact DSO-12 SMD package complies with EGR 314 surface-mount requirements for custom PCBs, requires minimal external components, and supports PWM/DIR control with 3.3 V/5 V logic compatibility for easy MCU integration. Backed by Infineon's automotive-grade reliability, detailed datasheets, and low standby current for battery efficiency, it outperforms simpler alternatives in durability and margin for the rover's moderate loads, making it a strong, dependable choice for reliable bidirectional motor control.
+**Decision update:** The TPS563201DDCT was selected over a linear regulator specifically for efficiency. A linear regulator dropping 9V to 3.3V would dissipate 5.7V x load current as heat. At 500mA ESP32 load this is 2.85W of wasted power. The switching regulator wastes less than 10% of this, significantly extending battery life in a rover application. Output voltage is set to 3.3V using a 390kΩ/120kΩ feedback divider network verified against the 0.765V internal reference.
 
-### My Role on the Team, Actuation Subsystem Responsibilities, and Microcontroller Selection
-As the Actuation Subsystem member for our small exploration rover group project, I focus on the design, selection, integration, and control of the rover's motion and drive capabilities, centered around the two Pololu #4843 motors and the Infineon IFX9201SG H-bridge drivers, with the ESP32-S3-WROOM-1-N4 microcontroller providing the PWM signals, control logic, and communication functionality. My primary responsibilities include selecting and justifying the motors (Pololu #4843 for their balanced 7.4 kg·cm stall torque, 500 RPM no-load speed, integrated 48 CPR encoders, and compact metal-gear construction suited to a ~2–5 kg rover on moderate terrain) and the H-bridge (IFX9201SG for its robust 6 A continuous rating, wide 4.5–36 V range, integrated protections against overcurrent/thermal/short-circuit, and compact DSO-12 SMD package compliant with EGR 314 surface-mount requirements). I handle the actuation block in the system diagram, ensuring reliable bidirectional PWM control for differential drive, precise speed and direction commands from the ESP32-S3's MCPWM peripheral, and closed-loop feedback using the motor encoders to achieve accurate odometry and smooth navigation. This includes verifying current handling for the motor's ~5 A stall peaks, designing appropriate power routing and protection, and collaborating on firmware interfaces for torque/speed limiting to prevent damage during testing or obstacle encounters. By designing the actuation subsystem end-to-end—from component tables and rationale to wiring, PCB integration considerations, and basic control tuning—I ensure the rover can move reliably, responsively, and efficiently across the intended exploration environments while meeting all assignment specifications for off-the-shelf solutions, documentation, and reliability.
+**How it meets requirements:** The TPS563201DDCT directly satisfies the microcontroller power regulation requirement, providing a regulated 3.3V supply meeting the target measure. The switching topology ensures stable voltage regulation under varying ESP32 load conditions including WiFi and GPIO switching transients.
+
+---
+
+### ESP32-S3-WROOM-1-N4: Microcontroller Module
+
+| Pros | Cons |
+|---|---|
+| Native USB Serial/JTAG on GPIO19/GPIO20 means no external USB-UART chip is required for programming | N4 variant has no PSRAM, providing 512KB SRAM only, which is sufficient for this application |
+| Dual SPI peripherals, multiple UART interfaces, and LEDC PWM peripheral support all required signals simultaneously | Antenna area must be kept clear of copper pour on PCB |
+| 3.3V logic compatible with IFX9201SG inputs directly, so no level shifting is required | Boot strapping pins (GPIO0, GPIO3, GPIO45, GPIO46) must be avoided for general use |
+| Sufficient GPIO for full motor control, SPI, UART, USB, encoder inputs, and debug LED with pins remaining for expansion header | |
+
+**How it meets requirements:** The ESP32-S3 directly satisfies the microcontroller selection requirement. Its LEDC PWM peripheral generates the 20kHz motor control signal with hardware precision, and its UART peripheral supports the team's daisy-chain communication bus meeting the fully synchronised control interface target requirement.
+
+---
+
+## ESP32-S3-WROOM-1-N4 Pinout Table
+
+| GPIO | Pin | Function | Connected To | Direction |
+|---|---|---|---|---|
+| GPIO4 | 5 | Motor B PWM | IFX9201SG-B PWM (pin 12) | Output |
+| GPIO5 | 6 | Motor B DIR | IFX9201SG-B DIR (pin 1) | Output |
+| GPIO6 | 7 | Motor B DIS | IFX9201SG-B DIS (pin 11) | Output |
+| GPIO7 | 8 | Expansion Header | Pin Header | I/O |
+| GPIO8 | 9 | Expansion Header | Pin Header | I/O |
+| GPIO9 | 10 | Expansion Header | Pin Header | I/O |
+| GPIO10 | 11 | Expansion Header | Pin Header | I/O |
+| GPIO11 | 12 | SPI MOSI | IFX9201SG-B SI (pin 8) | Output |
+| GPIO12 | 13 | SPI SCK | IFX9201SG-B SCK (pin 10) | Output |
+| GPIO13 | 14 | SPI MISO | IFX9201SG-B SO (pin 3) | Input |
+| GPIO17 | 18 | Encoder A, Motor B | Pololu 4843 ENC_A | Input |
+| GPIO18 | 19 | Encoder B, Motor B | Pololu 4843 ENC_B | Input |
+| GPIO19 | 20 | USB D- | USB-C Connector A7/B7 | I/O |
+| GPIO20 | 21 | USB D+ | USB-C Connector A6/B6 | I/O |
+| GPIO39 | 40 | SPI CSN, Motor B | IFX9201SG-B CSN (pin 9) | Output |
+| GPIO43 | 44 | UART TX | UART Connector OUT | Output |
+| GPIO44 | 45 | UART RX | UART Connector IN | Input |
+| GPIO47 | 48 | Debug LED | 330Ω resistor to LED to GND | Output |
+| GPIO48 | 49 | Onboard RGB LED | Module internal | Output |
+| EN | N/A | Reset | 10kΩ pullup + 100nF + Reset button | Input |
+| GPIO0 | 1 | Boot Mode | 10kΩ pullup + Boot button | Input |
+
+---
+
+## Decision-Making Process
+
+The component selection process was driven by three primary constraints: compatibility with the team's 9V power architecture, compliance with EGR314 surface-mount PCB requirements, and integration with the team's UART daisy-chain communication protocol.
+
+The Pololu 4843 was retained from the initial selection as it remains the best balance of torque, speed, compactness and encoder resolution for the rover's expected operating conditions. Operating it at 9V rather than 12V was a deliberate trade-off accepted after calculating that the resulting 3.75A stall current fits safely within the IFX9201SG's 6A rating, and that the ~75% speed reduction still provides adequate rover mobility.
+
+The IFX9201SG was confirmed as the optimal H-bridge after evaluating the DRV8873 and DRV8962 alternatives. The SPI diagnostic interface was a decisive factor, as it provides real-time fault visibility that the simpler PWM-only drivers cannot match, and this directly supports the motor feedback sensing and safety interlock requirements. Hardware bring-up experience reinforced this decision, as the SPI diagnosis register proved invaluable for identifying and resolving wiring faults during testing.
+
+The TPS563201DDCT was added as a formal component selection to address the power regulation requirement explicitly. Its switching topology was chosen over a linear regulator for efficiency reasons directly relevant to battery-powered rover operation.
+
+The ESP32-S3-WROOM-1-N4 was confirmed over PIC alternatives due to its native USB programming capability eliminating the need for an external USB-UART chip, its 3.3V logic compatibility with all other ICs in the design, and its LEDC PWM peripheral providing hardware-accurate 20kHz motor control signals independent of firmware execution timing.
