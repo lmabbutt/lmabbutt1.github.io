@@ -56,42 +56,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/01-Componet-Selection/Component-Selection-Process/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/02-Microcontroller-Selection/esp-32-table/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/02-Microcontroller-Selection/pic-table/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/03-Power-Budget/Power-Budget/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/04-Examples-to-Remove/another-subfile/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/04-Examples-to-Remove/basic-markdown-examples/</loc>
-         <lastmod>2026-05-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/Appendix/04-Examples-to-Remove/charts/</loc>
+         <loc>https://embedded-systems-design.github.io/EGR314DataSheetTemplate/12-Resources/Resources/</loc>
          <lastmod>2026-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
