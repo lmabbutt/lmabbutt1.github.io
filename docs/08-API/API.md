@@ -1,123 +1,222 @@
-# Motor Controller — Message Datasheet
+# Motor Drive Subsystem API
 
-**Network:** UART daisy-chain  
-**Data types:** MicroPython / C  
-**Byte order:** Little-endian for all multi-byte fields
+## Overview
 
-| Legend | Meaning |
-|--------|---------|
-| 🔵 Send | This board transmits the message |
-| 🟢 Receive | This board listens and acts on the message |
-| 🟡 Both | This board sends and receives this message |
+My Motor Drive subsystem is the actuation node on Team 305's daisy-chain UART bus. The board is an ESP32-S3-WROOM-1-N4 running MicroPython, paired with an IFX9201SGAUMA1 H-bridge motor driver controlled via SPI. It receives motor speed commands from Christo's HMI node, drives the Pololu 4843 DC gearmotor bidirectionally using PWM and SPI control, forwards all non-addressed packets downstream, and sends ACK responses for every packet addressed directly to this node.
+
+The IFX9201SG is operated in SPI control mode, with the LEDC PWM peripheral on GPIO4 providing the speed signal and the SPI diagnosis register polled after every motor command to report fault status in real time.
 
 ---
 
-## Message Type 1 — Motor Control State Report 🔵 Send
+## Packet Frame
 
-Broadcast by the motor controller to report commanded motor states.
+| Byte(s) | Field | Value |
+|---|---|---|
+| 0-1 | Start | 0xA5 0x5A |
+| 2 | Sender ID | see table below |
+| 3 | Receiver ID | see table below |
+| 4 | Message Type | uint8_t |
+| 5-61 | Data | up to 57 bytes |
+| 62-63 | Stop | 0x59 0x42 |
 
-| Byte(s) | Variable Name | C Type | Bytes | Min Value | Max Value | Example | Notes |
-|---------|--------------|--------|-------|-----------|-----------|---------|-------|
-| 1–2 | `message_type` | `uint16_t` | 2 | 1 | 1 | `1` | Always 1 for this message |
-| 3–4 | `left_motor_speed` | `int16_t` | 2 | -255 | 255 | `-200` | PWM duty cycle; negative = reverse ⚠️ *team must confirm range* |
-| 5–6 | `right_motor_speed` | `int16_t` | 2 | -255 | 255 | `200` | PWM duty cycle; negative = reverse ⚠️ *team must confirm range* |
-| 7 | `left_motor_dir` | `uint8_t` | 1 | 0 | 1 | `0` | 0 = reverse, 1 = forward |
-| 8 | `right_motor_dir` | `uint8_t` | 1 | 0 | 1 | `1` | 0 = reverse, 1 = forward |
+Total packet size is always 64 bytes. All fields are fixed-position. The message type is a single byte at position 4. The data payload begins at position 5.
 
-**Total payload:** 8 bytes
+Baud rate: 9600, 8N1, no parity, no flow control.
 
-> ⚠️ **Missing from team table:** No payload length field or checksum/CRC — recommend adding for UART reliability.
-
-> ⚠️ **Redundancy concern:** Direction is encoded twice — via the sign of `int16_t` speed AND via the direction byte. Team should decide: use sign of `int16_t` only, or use unsigned speed + direction byte exclusively.
-
----
-
-## Message Type 2 — Motor Status Report 🔵 Send
-
-Periodic report of measured motor operating conditions sent by this board.
-
-| Byte(s) | Variable Name | C Type | Bytes | Min Value | Max Value | Example | Notes |
-|---------|--------------|--------|-------|-----------|-----------|---------|-------|
-| 1–2 | `message_type` | `uint16_t` | 2 | 2 | 2 | `2` | Always 2 for this message |
-| 3–4 | `left_motor_current_ma` | `uint16_t` | 2 | 0 | 5000 | `1200` | Measured current in mA; `uint16_t` supports 0–65535 |
-| 5–6 | `right_motor_current_ma` | `uint16_t` | 2 | 0 | 5000 | `1350` | Measured current in mA |
-| 7 | `left_motor_status` | `uint8_t` | 1 | 0 | 255 | `0` | Status code ⚠️ *team must define code table* |
-| 8 | `right_motor_status` | `uint8_t` | 1 | 0 | 255 | `0` | Status code ⚠️ *team must define code table* |
-
-**Total payload:** 8 bytes
-
-> ⚠️ **Missing from team table:** No actual motor RPM or encoder feedback field. If encoders are present, a `uint16_t rpm` field per motor is recommended for closed-loop control.
-
-> ⚠️ **Motor status codes are undefined.** Suggested definitions:
-> - `0` = OK
-> - `1` = Stalled
-> - `2` = Overcurrent
-> - `3` = Fault
+Byte stuffing: `build_packet()` subtracts 1 (mod 256) from any byte at positions 4-61 that equals a reserved value (0xA5, 0x5A, 0x59, 0x42). Any subsystem parsing packets from this board must add 1 back to stuffed bytes before interpreting data.
 
 ---
 
-## Message Type 13 — System Status Report 🟢 Receive / Act On
+## Teammate IDs
 
-Broadcast from the main controller. The motor controller monitors system state and battery voltage to adjust behavior (e.g., emergency stop, low-battery throttling).
+Each node ID is the ASCII value of the person's first initial, which keeps addresses readable in a serial monitor without a lookup table.
 
-| Byte(s) | Variable Name | C Type | Bytes | Min Value | Max Value | Example | Notes |
-|---------|--------------|--------|-------|-----------|-----------|---------|-------|
-| 1–2 | `message_type` | `uint16_t` | 2 | 13 | 13 | `13` | Filter on this value to identify message |
-| 3 | `system_state` | `uint8_t` | 1 | 0 | 255 | `1` | Act on this: stop motors if state = emergency stop ⚠️ *state codes undefined* |
-| 4–7 | `uptime_ms` | `uint32_t` | 4 | 0 | 4294967295 | `12400` | Informational; can ignore or log |
-| 8–9 | `battery_voltage_mv` | `uint16_t` | 2 | 0 | 65535 | `11800` | Act on this: throttle motors if battery low ⚠️ *team must define low-voltage threshold* |
-
-**Total payload:** 9 bytes
-
-> ⚠️ **Missing from team table:** `system_state` codes are not defined. The motor controller must know which value triggers an emergency stop vs. normal operation.
-
----
-
-## Message Type 14 — System Error Code Report 🟡 Send & Receive
-
-Sent by this board to report motor faults; also received from other subsystems to monitor overall system health.
-
-| Byte(s) | Variable Name | C Type | Bytes | Min Value | Max Value | Example | Notes |
-|---------|--------------|--------|-------|-----------|-----------|---------|-------|
-| 1–2 | `message_type` | `uint16_t` | 2 | 14 | 14 | `14` | Always 14 for this message |
-| 3 | `subsystem_id` | `uint8_t` | 1 | 0 | 255 | `2` | When sending: use this board's assigned ID ⚠️ *team must assign subsystem IDs* |
-| 4 | `error_code` | `uint8_t` | 1 | 0 | 255 | `2` | When sending: motor fault code ⚠️ *team must define error code table* |
-
-**Total payload:** 4 bytes
-
-> ⚠️ **Missing from team table:** No subsystem ID assignments. This board needs a unique `subsystem_id` to identify itself when sending errors.
-
-> ⚠️ **Error codes are undefined.** Suggested definitions:
-> - `0` = None
-> - `1` = Left motor stall
-> - `2` = Right motor stall
-> - `3` = Left motor overcurrent
-> - `4` = Right motor overcurrent
-> - `5` = Communication timeout
+| Name | Subsystem | Board ID | Initial |
+|---|---|---|---|
+| Christo | HMI | 0x43 | C |
+| Liam | Motor Drive | 0x4C | L |
+| Isaiah | Environmental Sensor | 0x49 | I |
+| Arianna | Camera + Encoder | 0x41 | A |
+| Myles | Distance Sensor | 0x4D | M |
+| Ragul | Gyroscope | 0x52 | R |
+| Damian | MQTT / Wireless | 0x44 | D |
+| (none) | Broadcast / Everyone | 0x58 | X |
 
 ---
 
-## Summary
+## Receive State Machine
 
-| Message | Direction | Total Payload Bytes |
-|---------|-----------|-------------------|
-| Type 1 — Motor control state report | 🔵 Send | 8 |
-| Type 2 — Motor status report | 🔵 Send | 8 |
-| Type 13 — System status report | 🟢 Receive | 9 |
-| Type 14 — System error code report | 🟡 Both | 4 |
+Every byte off the UART runs through three states before any routing decision happens. Junk between frames is silently ignored. A false start (0xA5 not followed by 0x5A) drops back to WAIT_P1 without losing the second byte if it is another 0xA5.
+
+```
+WAIT_P1  ->  byte == 0xA5?  yes -> WAIT_P2,  no -> ignore
+WAIT_P2  ->  byte == 0x5A?  yes -> COLLECT,  no -> WAIT_P1
+COLLECT  ->  accumulate 64 bytes, then VALIDATE
+VALIDATE ->  stop bits present? sender known? receiver known? not loopback?
+             all pass -> ROUTE,  any fail -> discard, back to WAIT_P1
+ROUTE    ->  receiver == 0x4C:  handle + ACK, do NOT forward
+             receiver == 0x58:  handle AND forward downstream
+             receiver == other: forward only, do NOT handle
+```
+
+RX drains completely before any outbound packet goes out. Packets with bad start/stop bits, unknown IDs, or a sender of 0x4C (loopback) are dropped with an error log to the REPL.
 
 ---
 
-## Open Items for Team Resolution
+## Messages I Receive
 
-| # | Issue | Affects |
-|---|-------|---------|
-| 1 | Confirm PWM speed range (currently assumed -255 to 255) | Type 1 |
-| 2 | Resolve direction encoding redundancy (sign vs. direction byte) | Type 1 |
-| 3 | Define motor status codes (0=OK, 1=stall, etc.) | Type 2 |
-| 4 | Add RPM/encoder feedback fields if using closed-loop control | Type 2 |
-| 5 | Define `system_state` code values (especially emergency stop) | Type 13 |
-| 6 | Define low-battery voltage threshold for motor throttling | Type 13 |
-| 7 | Assign unique `subsystem_id` to the motor controller board | Type 14 |
-| 8 | Define error code table for motor faults | Type 14 |
-| 9 | Add payload length and CRC/checksum to all messages | All |
+All multi-byte fields are little-endian. Data bytes are numbered from 0 starting at packet byte 5.
+
+### Type 0x01: Motor Speed Command
+
+**From:** Christo HMI (0x43)
+
+| Data Byte | 0 |
+|---|---|
+| Field | speed |
+| C Type | int8_t (sent as uint8_t, two's complement) |
+| Range | -100 to 100 |
+| Example | -30 sent as 0xE2 |
+
+Speed is a PWM duty cycle percentage clamped to +/-100. Negative values command reverse direction, positive values command forward direction, and zero stops the motor. On receipt the node decodes the signed value, sets the IFX9201SG direction via SPI control register (SDIR bit), and applies the duty cycle to the PWM peripheral on GPIO4. The SPI diagnosis register is polled immediately after the motor command is applied and any fault is printed to the REPL.
+
+**Motor control logic:**
+
+| Speed Value | Direction | Action |
+|---|---|---|
+| 1 to 100 | Forward | SDIR=1, PWM duty = speed% |
+| -1 to -100 | Reverse | SDIR=0, PWM duty = abs(speed)% |
+| 0 | Stop | SEN=0, PWM duty = 0 |
+
+### Type 0x02: Stop Command
+
+**From:** Any node (0x58 broadcast or 0x4C direct)
+
+| Data Byte | none |
+|---|---|
+| Field | (no payload) |
+| C Type | (none) |
+
+Immediately sets PWM duty to 0, disables the IFX9201SG outputs via SPI (SEN=0), resets the SPI diagnosis register, and polls fault status. Motor speed is set to 0 in firmware state. An ACK is returned if the packet was addressed directly to 0x4C.
+
+### Type 0xAA: ACK
+
+**From:** Any node
+
+| Packet Byte | 4 | 5 |
+|---|---|---|
+| Field | msg_type | received_type |
+| Value | 0xAA | echoes the type that triggered the ACK |
+
+ACK packets addressed to 0x4C are logged to the REPL and consumed. They are not forwarded downstream.
+
+---
+
+## Messages I Send
+
+### Type 0xAA: ACK
+
+**To:** Sender of any valid packet addressed to 0x4C
+
+| Packet Byte | 4 | 5 |
+|---|---|---|
+| Field | msg_type | received_type |
+| Value | 0xAA (fixed) | echoes the type that triggered it |
+| Example | 0xAA | 0x01 |
+
+Every valid packet addressed directly to 0x4C receives an immediate ACK back to the sender. Broadcast packets (0x58) do not receive an ACK. Sending ACKs to a broadcast address would flood the bus with simultaneous responses from every node.
+
+---
+
+## Routing Logic
+
+| Condition | Action |
+|---|---|
+| Receiver == 0x4C (me) | Handle, send ACK, do not forward |
+| Receiver == 0x58 (broadcast) | Handle and forward downstream |
+| Sender == 0x4C (loopback) | Discard silently (E09) |
+| Receiver == other known node | Forward immediately, do not handle |
+| Malformed / unknown ID | Discard, print error to REPL |
+
+---
+
+## IFX9201SG SPI Control Interface
+
+The motor driver is operated in SPI mode (SIN=1 in the control register). The SPI bus runs at 1MHz, Mode 1 (CPOL=0, CPHA=1), 8-bit words, MSB first, per the IFX9201SG datasheet section 4.12.
+
+### SPI Commands
+
+| Command | Byte Value | Description |
+|---|---|---|
+| RD_DIA | 0x00 | Read diagnosis register |
+| RES_DIA | 0x80 | Reset diagnosis register |
+| RD_REV | 0x20 | Read device revision |
+| RD_CTRL | 0x60 | Read control register |
+| WR_CTRL | 0xE0 | Write control register |
+| WR_CTRL_RD_DIA | 0xC0 | Write control and read diagnosis |
+
+### Control Register Bits (WR_CTRL: 0xE0 | data)
+
+| Bit | Name | Description |
+|---|---|---|
+| 4 | OLDIS | 1 = disconnect open load current source |
+| 3 | SIN | 1 = SPI control mode, 0 = PWM/DIR mode |
+| 2 | SEN | 1 = enable outputs, 0 = disable outputs |
+| 1 | SDIR | 1 = forward, 0 = reverse |
+| 0 | SPWM | 1 = PWM input active |
+
+### Diagnosis Register Fault Codes (lower nibble)
+
+| DIA[3:0] | Hex | Fault | Latched |
+|---|---|---|---|
+| 1111 | 0xF | No failure | No |
+| 1110 | 0xE | Short to GND at OUT1 | Yes |
+| 1101 | 0xD | Short to VS at OUT1 | Yes |
+| 1100 | 0xC | Open load | No |
+| 1011 | 0xB | Short to GND at OUT2 | Yes |
+| 1010 | 0xA | Short to GND at OUT1 and OUT2 | Yes |
+| 1001 | 0x9 | Short to VS at OUT1 and GND at OUT2 | Yes |
+| 0111 | 0x7 | Short to VS at OUT2 | Yes |
+| 0110 | 0x6 | Short to GND at OUT1 and VS at OUT2 | Yes |
+| 0101 | 0x5 | Short to VS at OUT1 and OUT2 | Yes |
+| 0011 | 0x3 | VS undervoltage | No |
+
+Latched faults require an explicit RES_DIA command or a DIS pin toggle to clear. Non-latched faults clear automatically when the fault condition is resolved.
+
+---
+
+## GPIO Pin Assignment
+
+| GPIO | Function | Direction | Connected To |
+|---|---|---|---|
+| GPIO4 | Motor PWM | Output | IFX9201SG PWM (pin 12) |
+| GPIO5 | Motor DIR | Output | IFX9201SG DIR (pin 1) |
+| GPIO6 | Motor DIS | Output | IFX9201SG DIS (pin 11) |
+| GPIO11 | SPI MOSI | Output | IFX9201SG SI (pin 8) |
+| GPIO12 | SPI SCK | Output | IFX9201SG SCK (pin 10) |
+| GPIO13 | SPI MISO | Input | IFX9201SG SO (pin 3) |
+| GPIO39 | SPI CSN | Output | IFX9201SG CSN (pin 9) |
+| GPIO43 | UART TX | Output | UART bus connector OUT |
+| GPIO44 | UART RX | Input | UART bus connector IN |
+| GPIO47 | Debug LED | Output | 330 ohm resistor to LED to GND |
+
+---
+
+## Byte Stuffing
+
+`build_packet()` subtracts 1 (mod 256) from any byte at positions 4-61 (msg_type through end of data) that matches a reserved value. Reserved set: 0xA5, 0x5A, 0x59, 0x42. Any node receiving a packet from this board must add 1 back to recover stuffed bytes before interpreting the data.
+
+---
+
+## Error Codes
+
+| Code | Meaning |
+|---|---|
+| E01 | Missing start bits |
+| E02 | Missing stop bits |
+| E03 | Bad packet length |
+| E04 | Sender ID not in known node list |
+| E05 | Receiver ID not in known node list |
+| E07 | Payload too long |
+| E08 | Zero ID detected in sender or receiver field |
+| E09 | Loopback detected, packet discarded |
