@@ -26,7 +26,7 @@
 
     
       
-        <title>Motor Controller — Message Datasheet - Liam Mabbutt's Datasheet</title>
+        <title>Motor Drive Subsystem API - Liam Mabbutt's Datasheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#motor-controller-message-datasheet" class="md-skip">
+        <a href="#motor-drive-subsystem-api" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Motor Controller — Message Datasheet
+              Motor Drive Subsystem API
             
           </span>
         </div>
@@ -809,7 +809,7 @@
           
   
   <span class="md-ellipsis">
-    Motor Controller — Message Datasheet
+    Motor Drive Subsystem API
   </span>
   
 
@@ -820,7 +820,7 @@
         
   
   <span class="md-ellipsis">
-    Motor Controller — Message Datasheet
+    Motor Drive Subsystem API
   </span>
   
 
@@ -842,54 +842,180 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#message-type-1-motor-control-state-report-send" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 1 — Motor Control State Report 🔵 Send
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-2-motor-status-report-send" class="md-nav__link">
+  <a href="#packet-frame" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 2 — Motor Status Report 🔵 Send
+      Packet Frame
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-13-system-status-report-receive-act-on" class="md-nav__link">
+  <a href="#teammate-ids" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 13 — System Status Report 🟢 Receive / Act On
+      Teammate IDs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-14-system-error-code-report-send-receive" class="md-nav__link">
+  <a href="#receive-state-machine" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 14 — System Error Code Report 🟡 Send &amp; Receive
+      Receive State Machine
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#messages-i-receive" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Messages I Receive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages I Receive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-0x01-motor-speed-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0x01: Motor Speed Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-0x02-stop-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0x02: Stop Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-0xaa-ack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0xAA: ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-i-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages I Send
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages I Send">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-0xaa-ack_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0xAA: ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Logic
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#open-items-for-team-resolution" class="md-nav__link">
+  <a href="#ifx9201sg-spi-control-interface" class="md-nav__link">
     <span class="md-ellipsis">
-      Open Items for Team Resolution
+      IFX9201SG SPI Control Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IFX9201SG SPI Control Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spi-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPI Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-register-bits-wr_ctrl-0xe0-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Register Bits (WR_CTRL: 0xE0 | data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis-register-fault-codes-lower-nibble" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnosis Register Fault Codes (lower nibble)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpio-pin-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO Pin Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#byte-stuffing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Byte Stuffing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Codes
     </span>
   </a>
   
@@ -1040,54 +1166,180 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#message-type-1-motor-control-state-report-send" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 1 — Motor Control State Report 🔵 Send
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-2-motor-status-report-send" class="md-nav__link">
+  <a href="#packet-frame" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 2 — Motor Status Report 🔵 Send
+      Packet Frame
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-13-system-status-report-receive-act-on" class="md-nav__link">
+  <a href="#teammate-ids" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 13 — System Status Report 🟢 Receive / Act On
+      Teammate IDs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-14-system-error-code-report-send-receive" class="md-nav__link">
+  <a href="#receive-state-machine" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 14 — System Error Code Report 🟡 Send &amp; Receive
+      Receive State Machine
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#messages-i-receive" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Messages I Receive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages I Receive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-0x01-motor-speed-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0x01: Motor Speed Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-0x02-stop-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0x02: Stop Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-0xaa-ack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0xAA: ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-i-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages I Send
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages I Send">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-0xaa-ack_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type 0xAA: ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Logic
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#open-items-for-team-resolution" class="md-nav__link">
+  <a href="#ifx9201sg-spi-control-interface" class="md-nav__link">
     <span class="md-ellipsis">
-      Open Items for Team Resolution
+      IFX9201SG SPI Control Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IFX9201SG SPI Control Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spi-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPI Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-register-bits-wr_ctrl-0xe0-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Register Bits (WR_CTRL: 0xE0 | data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosis-register-fault-codes-lower-nibble" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnosis Register Fault Codes (lower nibble)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpio-pin-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO Pin Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#byte-stuffing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Byte Stuffing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Codes
     </span>
   </a>
   
@@ -1116,395 +1368,579 @@
   
 
 
-<h1 id="motor-controller-message-datasheet">Motor Controller — Message Datasheet</h1>
-<p><strong>Network:</strong> UART daisy-chain<br>
-<strong>Data types:</strong> MicroPython / C<br>
-<strong>Byte order:</strong> Little-endian for all multi-byte fields</p>
+<h1 id="motor-drive-subsystem-api">Motor Drive Subsystem API</h1>
+<h2 id="overview">Overview</h2>
+<p>My Motor Drive subsystem is the actuation node on Team 305's daisy-chain UART bus. The board is an ESP32-S3-WROOM-1-N4 running MicroPython, paired with an IFX9201SGAUMA1 H-bridge motor driver controlled via SPI. It receives motor speed commands from Christo's HMI node, drives the Pololu 4843 DC gearmotor bidirectionally using PWM and SPI control, forwards all non-addressed packets downstream, and sends ACK responses for every packet addressed directly to this node.</p>
+<p>The IFX9201SG is operated in SPI control mode, with the LEDC PWM peripheral on GPIO4 providing the speed signal and the SPI diagnosis register polled after every motor command to report fault status in real time.</p>
+<hr>
+<h2 id="packet-frame">Packet Frame</h2>
 <table>
 <thead>
 <tr>
-<th>Legend</th>
+<th>Byte(s)</th>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-1</td>
+<td>Start</td>
+<td>0xA5 0x5A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sender ID</td>
+<td>see table below</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Receiver ID</td>
+<td>see table below</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Message Type</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td>5-61</td>
+<td>Data</td>
+<td>up to 57 bytes</td>
+</tr>
+<tr>
+<td>62-63</td>
+<td>Stop</td>
+<td>0x59 0x42</td>
+</tr>
+</tbody>
+</table>
+<p>Total packet size is always 64 bytes. All fields are fixed-position. The message type is a single byte at position 4. The data payload begins at position 5.</p>
+<p>Baud rate: 9600, 8N1, no parity, no flow control.</p>
+<p>Byte stuffing: <code>build_packet()</code> subtracts 1 (mod 256) from any byte at positions 4-61 that equals a reserved value (0xA5, 0x5A, 0x59, 0x42). Any subsystem parsing packets from this board must add 1 back to stuffed bytes before interpreting data.</p>
+<hr>
+<h2 id="teammate-ids">Teammate IDs</h2>
+<p>Each node ID is the ASCII value of the person's first initial, which keeps addresses readable in a serial monitor without a lookup table.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Subsystem</th>
+<th>Board ID</th>
+<th>Initial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Christo</td>
+<td>HMI</td>
+<td>0x43</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Liam</td>
+<td>Motor Drive</td>
+<td>0x4C</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Isaiah</td>
+<td>Environmental Sensor</td>
+<td>0x49</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Arianna</td>
+<td>Camera + Encoder</td>
+<td>0x41</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Myles</td>
+<td>Distance Sensor</td>
+<td>0x4D</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Ragul</td>
+<td>Gyroscope</td>
+<td>0x52</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Damian</td>
+<td>MQTT / Wireless</td>
+<td>0x44</td>
+<td>D</td>
+</tr>
+<tr>
+<td>(none)</td>
+<td>Broadcast / Everyone</td>
+<td>0x58</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="receive-state-machine">Receive State Machine</h2>
+<p>Every byte off the UART runs through three states before any routing decision happens. Junk between frames is silently ignored. A false start (0xA5 not followed by 0x5A) drops back to WAIT_P1 without losing the second byte if it is another 0xA5.</p>
+<div class="highlight"><pre><span></span><code>WAIT_P1  -&gt;  byte == 0xA5?  yes -&gt; WAIT_P2,  no -&gt; ignore
+WAIT_P2  -&gt;  byte == 0x5A?  yes -&gt; COLLECT,  no -&gt; WAIT_P1
+COLLECT  -&gt;  accumulate 64 bytes, then VALIDATE
+VALIDATE -&gt;  stop bits present? sender known? receiver known? not loopback?
+             all pass -&gt; ROUTE,  any fail -&gt; discard, back to WAIT_P1
+ROUTE    -&gt;  receiver == 0x4C:  handle + ACK, do NOT forward
+             receiver == 0x58:  handle AND forward downstream
+             receiver == other: forward only, do NOT handle
+</code></pre></div>
+<p>RX drains completely before any outbound packet goes out. Packets with bad start/stop bits, unknown IDs, or a sender of 0x4C (loopback) are dropped with an error log to the REPL.</p>
+<hr>
+<h2 id="messages-i-receive">Messages I Receive</h2>
+<p>All multi-byte fields are little-endian. Data bytes are numbered from 0 starting at packet byte 5.</p>
+<h3 id="type-0x01-motor-speed-command">Type 0x01: Motor Speed Command</h3>
+<p><strong>From:</strong> Christo HMI (0x43)</p>
+<table>
+<thead>
+<tr>
+<th>Data Byte</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field</td>
+<td>speed</td>
+</tr>
+<tr>
+<td>C Type</td>
+<td>int8_t (sent as uint8_t, two's complement)</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>-100 to 100</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>-30 sent as 0xE2</td>
+</tr>
+</tbody>
+</table>
+<p>Speed is a PWM duty cycle percentage clamped to +/-100. Negative values command reverse direction, positive values command forward direction, and zero stops the motor. On receipt the node decodes the signed value, sets the IFX9201SG direction via SPI control register (SDIR bit), and applies the duty cycle to the PWM peripheral on GPIO4. The SPI diagnosis register is polled immediately after the motor command is applied and any fault is printed to the REPL.</p>
+<p><strong>Motor control logic:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Speed Value</th>
+<th>Direction</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 to 100</td>
+<td>Forward</td>
+<td>SDIR=1, PWM duty = speed%</td>
+</tr>
+<tr>
+<td>-1 to -100</td>
+<td>Reverse</td>
+<td>SDIR=0, PWM duty = abs(speed)%</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Stop</td>
+<td>SEN=0, PWM duty = 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-0x02-stop-command">Type 0x02: Stop Command</h3>
+<p><strong>From:</strong> Any node (0x58 broadcast or 0x4C direct)</p>
+<table>
+<thead>
+<tr>
+<th>Data Byte</th>
+<th>none</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field</td>
+<td>(no payload)</td>
+</tr>
+<tr>
+<td>C Type</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
+<p>Immediately sets PWM duty to 0, disables the IFX9201SG outputs via SPI (SEN=0), resets the SPI diagnosis register, and polls fault status. Motor speed is set to 0 in firmware state. An ACK is returned if the packet was addressed directly to 0x4C.</p>
+<h3 id="type-0xaa-ack">Type 0xAA: ACK</h3>
+<p><strong>From:</strong> Any node</p>
+<table>
+<thead>
+<tr>
+<th>Packet Byte</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field</td>
+<td>msg_type</td>
+<td>received_type</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>0xAA</td>
+<td>echoes the type that triggered the ACK</td>
+</tr>
+</tbody>
+</table>
+<p>ACK packets addressed to 0x4C are logged to the REPL and consumed. They are not forwarded downstream.</p>
+<hr>
+<h2 id="messages-i-send">Messages I Send</h2>
+<h3 id="type-0xaa-ack_1">Type 0xAA: ACK</h3>
+<p><strong>To:</strong> Sender of any valid packet addressed to 0x4C</p>
+<table>
+<thead>
+<tr>
+<th>Packet Byte</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field</td>
+<td>msg_type</td>
+<td>received_type</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>0xAA (fixed)</td>
+<td>echoes the type that triggered it</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>0xAA</td>
+<td>0x01</td>
+</tr>
+</tbody>
+</table>
+<p>Every valid packet addressed directly to 0x4C receives an immediate ACK back to the sender. Broadcast packets (0x58) do not receive an ACK. Sending ACKs to a broadcast address would flood the bus with simultaneous responses from every node.</p>
+<hr>
+<h2 id="routing-logic">Routing Logic</h2>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Receiver == 0x4C (me)</td>
+<td>Handle, send ACK, do not forward</td>
+</tr>
+<tr>
+<td>Receiver == 0x58 (broadcast)</td>
+<td>Handle and forward downstream</td>
+</tr>
+<tr>
+<td>Sender == 0x4C (loopback)</td>
+<td>Discard silently (E09)</td>
+</tr>
+<tr>
+<td>Receiver == other known node</td>
+<td>Forward immediately, do not handle</td>
+</tr>
+<tr>
+<td>Malformed / unknown ID</td>
+<td>Discard, print error to REPL</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="ifx9201sg-spi-control-interface">IFX9201SG SPI Control Interface</h2>
+<p>The motor driver is operated in SPI mode (SIN=1 in the control register). The SPI bus runs at 1MHz, Mode 1 (CPOL=0, CPHA=1), 8-bit words, MSB first, per the IFX9201SG datasheet section 4.12.</p>
+<h3 id="spi-commands">SPI Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Byte Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RD_DIA</td>
+<td>0x00</td>
+<td>Read diagnosis register</td>
+</tr>
+<tr>
+<td>RES_DIA</td>
+<td>0x80</td>
+<td>Reset diagnosis register</td>
+</tr>
+<tr>
+<td>RD_REV</td>
+<td>0x20</td>
+<td>Read device revision</td>
+</tr>
+<tr>
+<td>RD_CTRL</td>
+<td>0x60</td>
+<td>Read control register</td>
+</tr>
+<tr>
+<td>WR_CTRL</td>
+<td>0xE0</td>
+<td>Write control register</td>
+</tr>
+<tr>
+<td>WR_CTRL_RD_DIA</td>
+<td>0xC0</td>
+<td>Write control and read diagnosis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="control-register-bits-wr_ctrl-0xe0-data">Control Register Bits (WR_CTRL: 0xE0 | data)</h3>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>OLDIS</td>
+<td>1 = disconnect open load current source</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SIN</td>
+<td>1 = SPI control mode, 0 = PWM/DIR mode</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SEN</td>
+<td>1 = enable outputs, 0 = disable outputs</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SDIR</td>
+<td>1 = forward, 0 = reverse</td>
+</tr>
+<tr>
+<td>0</td>
+<td>SPWM</td>
+<td>1 = PWM input active</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnosis-register-fault-codes-lower-nibble">Diagnosis Register Fault Codes (lower nibble)</h3>
+<table>
+<thead>
+<tr>
+<th>DIA[3:0]</th>
+<th>Hex</th>
+<th>Fault</th>
+<th>Latched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1111</td>
+<td>0xF</td>
+<td>No failure</td>
+<td>No</td>
+</tr>
+<tr>
+<td>1110</td>
+<td>0xE</td>
+<td>Short to GND at OUT1</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>1101</td>
+<td>0xD</td>
+<td>Short to VS at OUT1</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>1100</td>
+<td>0xC</td>
+<td>Open load</td>
+<td>No</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>0xB</td>
+<td>Short to GND at OUT2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>1010</td>
+<td>0xA</td>
+<td>Short to GND at OUT1 and OUT2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>0x9</td>
+<td>Short to VS at OUT1 and GND at OUT2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>0111</td>
+<td>0x7</td>
+<td>Short to VS at OUT2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>0110</td>
+<td>0x6</td>
+<td>Short to GND at OUT1 and VS at OUT2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>0101</td>
+<td>0x5</td>
+<td>Short to VS at OUT1 and OUT2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>0x3</td>
+<td>VS undervoltage</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Latched faults require an explicit RES_DIA command or a DIS pin toggle to clear. Non-latched faults clear automatically when the fault condition is resolved.</p>
+<hr>
+<h2 id="gpio-pin-assignment">GPIO Pin Assignment</h2>
+<table>
+<thead>
+<tr>
+<th>GPIO</th>
+<th>Function</th>
+<th>Direction</th>
+<th>Connected To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO4</td>
+<td>Motor PWM</td>
+<td>Output</td>
+<td>IFX9201SG PWM (pin 12)</td>
+</tr>
+<tr>
+<td>GPIO5</td>
+<td>Motor DIR</td>
+<td>Output</td>
+<td>IFX9201SG DIR (pin 1)</td>
+</tr>
+<tr>
+<td>GPIO6</td>
+<td>Motor DIS</td>
+<td>Output</td>
+<td>IFX9201SG DIS (pin 11)</td>
+</tr>
+<tr>
+<td>GPIO11</td>
+<td>SPI MOSI</td>
+<td>Output</td>
+<td>IFX9201SG SI (pin 8)</td>
+</tr>
+<tr>
+<td>GPIO12</td>
+<td>SPI SCK</td>
+<td>Output</td>
+<td>IFX9201SG SCK (pin 10)</td>
+</tr>
+<tr>
+<td>GPIO13</td>
+<td>SPI MISO</td>
+<td>Input</td>
+<td>IFX9201SG SO (pin 3)</td>
+</tr>
+<tr>
+<td>GPIO39</td>
+<td>SPI CSN</td>
+<td>Output</td>
+<td>IFX9201SG CSN (pin 9)</td>
+</tr>
+<tr>
+<td>GPIO43</td>
+<td>UART TX</td>
+<td>Output</td>
+<td>UART bus connector OUT</td>
+</tr>
+<tr>
+<td>GPIO44</td>
+<td>UART RX</td>
+<td>Input</td>
+<td>UART bus connector IN</td>
+</tr>
+<tr>
+<td>GPIO47</td>
+<td>Debug LED</td>
+<td>Output</td>
+<td>330 ohm resistor to LED to GND</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="byte-stuffing">Byte Stuffing</h2>
+<p><code>build_packet()</code> subtracts 1 (mod 256) from any byte at positions 4-61 (msg_type through end of data) that matches a reserved value. Reserved set: 0xA5, 0x5A, 0x59, 0x42. Any node receiving a packet from this board must add 1 back to recover stuffed bytes before interpreting the data.</p>
+<hr>
+<h2 id="error-codes">Error Codes</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>🔵 Send</td>
-<td>This board transmits the message</td>
+<td>E01</td>
+<td>Missing start bits</td>
 </tr>
 <tr>
-<td>🟢 Receive</td>
-<td>This board listens and acts on the message</td>
+<td>E02</td>
+<td>Missing stop bits</td>
 </tr>
 <tr>
-<td>🟡 Both</td>
-<td>This board sends and receives this message</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="message-type-1-motor-control-state-report-send">Message Type 1 — Motor Control State Report 🔵 Send</h2>
-<p>Broadcast by the motor controller to report commanded motor states.</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-<td><code>1</code></td>
-<td>Always 1 for this message</td>
+<td>E03</td>
+<td>Bad packet length</td>
 </tr>
 <tr>
-<td>3–4</td>
-<td><code>left_motor_speed</code></td>
-<td><code>int16_t</code></td>
-<td>2</td>
-<td>-255</td>
-<td>255</td>
-<td><code>-200</code></td>
-<td>PWM duty cycle; negative = reverse ⚠️ <em>team must confirm range</em></td>
+<td>E04</td>
+<td>Sender ID not in known node list</td>
 </tr>
 <tr>
-<td>5–6</td>
-<td><code>right_motor_speed</code></td>
-<td><code>int16_t</code></td>
-<td>2</td>
-<td>-255</td>
-<td>255</td>
-<td><code>200</code></td>
-<td>PWM duty cycle; negative = reverse ⚠️ <em>team must confirm range</em></td>
+<td>E05</td>
+<td>Receiver ID not in known node list</td>
 </tr>
 <tr>
-<td>7</td>
-<td><code>left_motor_dir</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td><code>0</code></td>
-<td>0 = reverse, 1 = forward</td>
+<td>E07</td>
+<td>Payload too long</td>
 </tr>
 <tr>
-<td>8</td>
-<td><code>right_motor_dir</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td><code>1</code></td>
-<td>0 = reverse, 1 = forward</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 8 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> No payload length field or checksum/CRC — recommend adding for UART reliability.</p>
-<p>⚠️ <strong>Redundancy concern:</strong> Direction is encoded twice — via the sign of <code>int16_t</code> speed AND via the direction byte. Team should decide: use sign of <code>int16_t</code> only, or use unsigned speed + direction byte exclusively.</p>
-</blockquote>
-<hr>
-<h2 id="message-type-2-motor-status-report-send">Message Type 2 — Motor Status Report 🔵 Send</h2>
-<p>Periodic report of measured motor operating conditions sent by this board.</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>2</td>
-<td>2</td>
-<td><code>2</code></td>
-<td>Always 2 for this message</td>
+<td>E08</td>
+<td>Zero ID detected in sender or receiver field</td>
 </tr>
 <tr>
-<td>3–4</td>
-<td><code>left_motor_current_ma</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>0</td>
-<td>5000</td>
-<td><code>1200</code></td>
-<td>Measured current in mA; <code>uint16_t</code> supports 0–65535</td>
-</tr>
-<tr>
-<td>5–6</td>
-<td><code>right_motor_current_ma</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>0</td>
-<td>5000</td>
-<td><code>1350</code></td>
-<td>Measured current in mA</td>
-</tr>
-<tr>
-<td>7</td>
-<td><code>left_motor_status</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>0</code></td>
-<td>Status code ⚠️ <em>team must define code table</em></td>
-</tr>
-<tr>
-<td>8</td>
-<td><code>right_motor_status</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>0</code></td>
-<td>Status code ⚠️ <em>team must define code table</em></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 8 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> No actual motor RPM or encoder feedback field. If encoders are present, a <code>uint16_t rpm</code> field per motor is recommended for closed-loop control.</p>
-<p>⚠️ <strong>Motor status codes are undefined.</strong> Suggested definitions:
-- <code>0</code> = OK
-- <code>1</code> = Stalled
-- <code>2</code> = Overcurrent
-- <code>3</code> = Fault</p>
-</blockquote>
-<hr>
-<h2 id="message-type-13-system-status-report-receive-act-on">Message Type 13 — System Status Report 🟢 Receive / Act On</h2>
-<p>Broadcast from the main controller. The motor controller monitors system state and battery voltage to adjust behavior (e.g., emergency stop, low-battery throttling).</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>13</td>
-<td>13</td>
-<td><code>13</code></td>
-<td>Filter on this value to identify message</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>system_state</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>1</code></td>
-<td>Act on this: stop motors if state = emergency stop ⚠️ <em>state codes undefined</em></td>
-</tr>
-<tr>
-<td>4–7</td>
-<td><code>uptime_ms</code></td>
-<td><code>uint32_t</code></td>
-<td>4</td>
-<td>0</td>
-<td>4294967295</td>
-<td><code>12400</code></td>
-<td>Informational; can ignore or log</td>
-</tr>
-<tr>
-<td>8–9</td>
-<td><code>battery_voltage_mv</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>0</td>
-<td>65535</td>
-<td><code>11800</code></td>
-<td>Act on this: throttle motors if battery low ⚠️ <em>team must define low-voltage threshold</em></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 9 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> <code>system_state</code> codes are not defined. The motor controller must know which value triggers an emergency stop vs. normal operation.</p>
-</blockquote>
-<hr>
-<h2 id="message-type-14-system-error-code-report-send-receive">Message Type 14 — System Error Code Report 🟡 Send &amp; Receive</h2>
-<p>Sent by this board to report motor faults; also received from other subsystems to monitor overall system health.</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>14</td>
-<td>14</td>
-<td><code>14</code></td>
-<td>Always 14 for this message</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>subsystem_id</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>2</code></td>
-<td>When sending: use this board's assigned ID ⚠️ <em>team must assign subsystem IDs</em></td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>error_code</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>2</code></td>
-<td>When sending: motor fault code ⚠️ <em>team must define error code table</em></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 4 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> No subsystem ID assignments. This board needs a unique <code>subsystem_id</code> to identify itself when sending errors.</p>
-<p>⚠️ <strong>Error codes are undefined.</strong> Suggested definitions:
-- <code>0</code> = None
-- <code>1</code> = Left motor stall
-- <code>2</code> = Right motor stall
-- <code>3</code> = Left motor overcurrent
-- <code>4</code> = Right motor overcurrent
-- <code>5</code> = Communication timeout</p>
-</blockquote>
-<hr>
-<h2 id="summary">Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Message</th>
-<th>Direction</th>
-<th>Total Payload Bytes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Type 1 — Motor control state report</td>
-<td>🔵 Send</td>
-<td>8</td>
-</tr>
-<tr>
-<td>Type 2 — Motor status report</td>
-<td>🔵 Send</td>
-<td>8</td>
-</tr>
-<tr>
-<td>Type 13 — System status report</td>
-<td>🟢 Receive</td>
-<td>9</td>
-</tr>
-<tr>
-<td>Type 14 — System error code report</td>
-<td>🟡 Both</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="open-items-for-team-resolution">Open Items for Team Resolution</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Issue</th>
-<th>Affects</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Confirm PWM speed range (currently assumed -255 to 255)</td>
-<td>Type 1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Resolve direction encoding redundancy (sign vs. direction byte)</td>
-<td>Type 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Define motor status codes (0=OK, 1=stall, etc.)</td>
-<td>Type 2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Add RPM/encoder feedback fields if using closed-loop control</td>
-<td>Type 2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Define <code>system_state</code> code values (especially emergency stop)</td>
-<td>Type 13</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Define low-battery voltage threshold for motor throttling</td>
-<td>Type 13</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Assign unique <code>subsystem_id</code> to the motor controller board</td>
-<td>Type 14</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Define error code table for motor faults</td>
-<td>Type 14</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Add payload length and CRC/checksum to all messages</td>
-<td>All</td>
+<td>E09</td>
+<td>Loopback detected, packet discarded</td>
 </tr>
 </tbody>
 </table>
