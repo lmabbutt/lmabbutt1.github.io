@@ -41,19 +41,3 @@ The key deliverables from this subsystem are a custom two-layer PCB capable of d
 
 ---
 
-## Datasheet Navigation
-
-Use the sections below to navigate to specific areas of this datasheet:
-
-| Section | Description |
-|---|---|
-| [Requirements](../01-Requirements/Requirements/) | Product requirements and design constraints for the motor drive subsystem |
-| [Component Selection](../02-Component-Selection/Component-Selection/) | Final component selections, trade-off analysis, and rationale for all major ICs |
-| [Hardware Proposal](../03-Hardware-Proposal/Hardware-Proposal/) | Schematic design and PCB layout for the motor drive board |
-| [BOM](../04-BOM/BOM/) | Full bill of materials with part numbers, quantities, and DigiKey links |
-| [Power Budget](../05-Power-Budget/Power-Budget/) | Power rail analysis, regulator selection, and battery life estimate |
-| [API](../06-API/API/) | UART communication protocol, message types, and SPI register interface |
-| [PCB](../07-PCB/PCB/) | PCB front and back images, Gerber files, and ECAD project download |
-| [Hardware V2.0](../08-Hardware-V2/Hardware-V2/) | Proposed improvements for a second hardware revision |
-| [Reflection](../09-Reflection/Reflection/) | Requirements review, lessons learned, and recommendations for future students |
-| [Resources](../10-Resources/Resources/) | Final firmware download and demo videos |
