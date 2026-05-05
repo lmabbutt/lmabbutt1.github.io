@@ -24,6 +24,8 @@ The complete MicroPython firmware project for the Motor Drive subsystem is avail
 
 The video below demonstrates all Team 305 nodes operating together on the daisy-chain UART bus, with the HMI node sending motor commands that are received and executed by the motor drive node.
 
+[Watch on YouTube](https://youtube.com/shorts/P3W65iciSMs)
+
 <iframe
   width="315"
   height="560"
