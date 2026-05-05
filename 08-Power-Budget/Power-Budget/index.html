@@ -9,13 +9,13 @@
       
       
       
-        <link rel="canonical" href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/08-API/API/">
+        <link rel="canonical" href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/08-Power-Budget/Power-Budget/">
       
       
-        <link rel="prev" href="../../06-PCB/PCB/">
+        <link rel="prev" href="../../07-API/API/">
       
       
-        <link rel="next" href="../../09-Power-Budget/Power-Budget/">
+        <link rel="next" href="../../09-HardwareV2/HardwareV2/">
       
       
       <link rel="icon" href="../../static/logo314.png">
@@ -26,7 +26,7 @@
 
     
       
-        <title>Motor Drive Subsystem API - Liam Mabbutt's Datasheet</title>
+        <title>Power Budget - Liam Mabbutt's Datasheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#motor-drive-subsystem-api" class="md-skip">
+        <a href="#power-budget" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Motor Drive Subsystem API
+              Power Budget
             
           </span>
         </div>
@@ -335,6 +335,26 @@
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-API/API/" class="md-tabs__link">
+          
+  
+    
+  
+  07 API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
     
   
   
@@ -346,7 +366,7 @@
   
     
   
-  08 API
+  08 Power Budget
 
         </a>
       </li>
@@ -361,12 +381,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../09-Power-Budget/Power-Budget/" class="md-tabs__link">
+        <a href="../../09-HardwareV2/HardwareV2/" class="md-tabs__link">
           
   
     
   
-  09 Power Budget
+  09 HardwareV2
 
         </a>
       </li>
@@ -381,12 +401,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../10-HardwareV2/HardwareV2/" class="md-tabs__link">
+        <a href="../../10-Reflection/Reflection/" class="md-tabs__link">
           
   
     
   
-  10 HardwareV2
+  10 Reflection
 
         </a>
       </li>
@@ -401,32 +421,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../11-Reflection/Reflection/" class="md-tabs__link">
+        <a href="../../11-Resources/Resources/" class="md-tabs__link">
           
   
     
   
-  11 Reflection
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../12-Resources/Resources/" class="md-tabs__link">
-          
-  
-    
-  
-  12 Resources
+  11 Resources
 
         </a>
       </li>
@@ -784,6 +784,52 @@
       
   
   
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-API/API/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    07 API
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -808,24 +854,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked="">
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    08 API
+    08 Power Budget
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            08 API
+            08 Power Budget
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
             
@@ -849,7 +895,7 @@
           
   
   <span class="md-ellipsis">
-    Motor Drive Subsystem API
+    Power Budget
   </span>
   
 
@@ -860,7 +906,7 @@
         
   
   <span class="md-ellipsis">
-    Motor Drive Subsystem API
+    Power Budget
   </span>
   
 
@@ -891,64 +937,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#packet-frame" class="md-nav__link">
+  <a href="#section-a-major-components-and-maximum-current" class="md-nav__link">
     <span class="md-ellipsis">
-      Packet Frame
+      Section A: Major Components and Maximum Current
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#teammate-ids" class="md-nav__link">
+  <a href="#section-b-power-rail-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      Teammate IDs
+      Section B: Power Rail Assignment
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#receive-state-machine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Receive State Machine
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#messages-i-receive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Messages I Receive
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Messages I Receive">
+    <nav class="md-nav" aria-label="Section B: Power Rail Assignment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-0x01-motor-speed-command" class="md-nav__link">
+  <a href="#rail-1-9v-power-rail" class="md-nav__link">
     <span class="md-ellipsis">
-      Type 0x01: Motor Speed Command
+      Rail 1: +9V Power Rail
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-0x02-stop-command" class="md-nav__link">
+  <a href="#rail-2-33v-power-rail" class="md-nav__link">
     <span class="md-ellipsis">
-      Type 0x02: Stop Command
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-0xaa-ack" class="md-nav__link">
-    <span class="md-ellipsis">
-      Type 0xAA: ACK
+      Rail 2: +3.3V Power Rail
     </span>
   </a>
   
@@ -960,19 +979,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#messages-i-send" class="md-nav__link">
+  <a href="#section-c-voltage-regulator-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Messages I Send
+      Section C: Voltage Regulator Selection
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Messages I Send">
+    <nav class="md-nav" aria-label="Section C: Voltage Regulator Selection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-0xaa-ack_1" class="md-nav__link">
+  <a href="#33v-rail-texas-instruments-tps563201ddct" class="md-nav__link">
     <span class="md-ellipsis">
-      Type 0xAA: ACK
+      3.3V Rail: Texas Instruments TPS563201DDCT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3V Rail: Texas Instruments TPS563201DDCT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-regulators-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Regulators Considered
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9v-rail-no-regulator-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      9V Rail: No Regulator Required
     </span>
   </a>
   
@@ -984,46 +1027,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routing-logic" class="md-nav__link">
+  <a href="#section-d-external-power-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Routing Logic
+      Section D: External Power Source
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ifx9201sg-spi-control-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      IFX9201SG SPI Control Interface
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IFX9201SG SPI Control Interface">
+    <nav class="md-nav" aria-label="Section D: External Power Source">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#spi-commands" class="md-nav__link">
+  <a href="#realistic-case-motor-at-25-of-maximum" class="md-nav__link">
     <span class="md-ellipsis">
-      SPI Commands
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#control-register-bits-wr_ctrl-0xe0-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Control Register Bits (WR_CTRL: 0xE0 | data)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diagnosis-register-fault-codes-lower-nibble" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagnosis Register Fault Codes (lower nibble)
+      Realistic Case (Motor at 25% of Maximum)
     </span>
   </a>
   
@@ -1035,29 +1051,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpio-pin-assignment" class="md-nav__link">
+  <a href="#section-f-power-budget-analysis-and-conclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      GPIO Pin Assignment
+      Section F: Power Budget Analysis and Conclusions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section F: Power Budget Analysis and Conclusions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-power-budget-was-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the Power Budget Was Used
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#byte-stuffing" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#key-conclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      Byte Stuffing
+      Key Conclusions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#error-codes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#power-budget-spreadsheet" class="md-nav__link">
     <span class="md-ellipsis">
-      Error Codes
+      Power Budget Spreadsheet
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1104,11 +1135,11 @@
         
   
   
-    <a href="../../09-Power-Budget/Power-Budget/" class="md-nav__link">
+    <a href="../../09-HardwareV2/HardwareV2/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    09 Power Budget
+    09 HardwareV2
   </span>
   
 
@@ -1150,11 +1181,11 @@
         
   
   
-    <a href="../../10-HardwareV2/HardwareV2/" class="md-nav__link">
+    <a href="../../10-Reflection/Reflection/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    10 HardwareV2
+    10 Reflection
   </span>
   
 
@@ -1196,57 +1227,11 @@
         
   
   
-    <a href="../../11-Reflection/Reflection/" class="md-nav__link">
+    <a href="../../11-Resources/Resources/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    11 Reflection
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../12-Resources/Resources/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    12 Resources
+    11 Resources
   </span>
   
 
@@ -1297,64 +1282,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#packet-frame" class="md-nav__link">
+  <a href="#section-a-major-components-and-maximum-current" class="md-nav__link">
     <span class="md-ellipsis">
-      Packet Frame
+      Section A: Major Components and Maximum Current
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#teammate-ids" class="md-nav__link">
+  <a href="#section-b-power-rail-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      Teammate IDs
+      Section B: Power Rail Assignment
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#receive-state-machine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Receive State Machine
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#messages-i-receive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Messages I Receive
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Messages I Receive">
+    <nav class="md-nav" aria-label="Section B: Power Rail Assignment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-0x01-motor-speed-command" class="md-nav__link">
+  <a href="#rail-1-9v-power-rail" class="md-nav__link">
     <span class="md-ellipsis">
-      Type 0x01: Motor Speed Command
+      Rail 1: +9V Power Rail
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-0x02-stop-command" class="md-nav__link">
+  <a href="#rail-2-33v-power-rail" class="md-nav__link">
     <span class="md-ellipsis">
-      Type 0x02: Stop Command
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-0xaa-ack" class="md-nav__link">
-    <span class="md-ellipsis">
-      Type 0xAA: ACK
+      Rail 2: +3.3V Power Rail
     </span>
   </a>
   
@@ -1366,19 +1324,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#messages-i-send" class="md-nav__link">
+  <a href="#section-c-voltage-regulator-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Messages I Send
+      Section C: Voltage Regulator Selection
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Messages I Send">
+    <nav class="md-nav" aria-label="Section C: Voltage Regulator Selection">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#type-0xaa-ack_1" class="md-nav__link">
+  <a href="#33v-rail-texas-instruments-tps563201ddct" class="md-nav__link">
     <span class="md-ellipsis">
-      Type 0xAA: ACK
+      3.3V Rail: Texas Instruments TPS563201DDCT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3V Rail: Texas Instruments TPS563201DDCT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-regulators-considered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Regulators Considered
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9v-rail-no-regulator-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      9V Rail: No Regulator Required
     </span>
   </a>
   
@@ -1390,46 +1372,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#routing-logic" class="md-nav__link">
+  <a href="#section-d-external-power-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Routing Logic
+      Section D: External Power Source
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ifx9201sg-spi-control-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      IFX9201SG SPI Control Interface
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IFX9201SG SPI Control Interface">
+    <nav class="md-nav" aria-label="Section D: External Power Source">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#spi-commands" class="md-nav__link">
+  <a href="#realistic-case-motor-at-25-of-maximum" class="md-nav__link">
     <span class="md-ellipsis">
-      SPI Commands
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#control-register-bits-wr_ctrl-0xe0-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Control Register Bits (WR_CTRL: 0xE0 | data)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diagnosis-register-fault-codes-lower-nibble" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagnosis Register Fault Codes (lower nibble)
+      Realistic Case (Motor at 25% of Maximum)
     </span>
   </a>
   
@@ -1441,29 +1396,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpio-pin-assignment" class="md-nav__link">
+  <a href="#section-f-power-budget-analysis-and-conclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      GPIO Pin Assignment
+      Section F: Power Budget Analysis and Conclusions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section F: Power Budget Analysis and Conclusions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-power-budget-was-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the Power Budget Was Used
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#byte-stuffing" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#key-conclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      Byte Stuffing
+      Key Conclusions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#error-codes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#power-budget-spreadsheet" class="md-nav__link">
     <span class="md-ellipsis">
-      Error Codes
+      Power Budget Spreadsheet
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1482,7 +1452,7 @@
                   
 
   
-    <a href="https://github.com/embedded-systems-design/EGR314DataSheetTemplate/edit/main/docs/08-API/API.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/embedded-systems-design/EGR314DataSheetTemplate/edit/main/docs/08-Power-Budget/Power-Budget.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
     </a>
@@ -1490,582 +1460,345 @@
   
 
 
-<h1 id="motor-drive-subsystem-api">Motor Drive Subsystem API</h1>
+<h1 id="power-budget">Power Budget</h1>
+<p><strong>Team Number:</strong> 305
+<strong>Project Name:</strong> Mars Exploration Rover
+<strong>Team Member:</strong> Liam Mabbutt
+<strong>Version:</strong> 1</p>
 <h2 id="overview">Overview</h2>
-<p>My Motor Drive subsystem is the actuation node on Team 305's daisy-chain UART bus. The board is an ESP32-S3-WROOM-1-N4 running MicroPython, paired with an IFX9201SGAUMA1 H-bridge motor driver controlled via SPI. It receives motor speed commands from Christo's HMI node, drives the Pololu 4843 DC gearmotor bidirectionally using PWM and SPI control, forwards all non-addressed packets downstream, and sends ACK responses for every packet addressed directly to this node.</p>
-<p>The IFX9201SG is operated in SPI control mode, with the LEDC PWM peripheral on GPIO4 providing the speed signal and the SPI diagnosis register polled after every motor command to report fault status in real time.</p>
+<p>This power budget confirms that the selected power source and voltage regulator can sufficiently supply all major components in the Drive Train subsystem under worst-case operating conditions.</p>
 <hr>
-<h2 id="packet-frame">Packet Frame</h2>
+<h2 id="section-a-major-components-and-maximum-current">Section A: Major Components and Maximum Current</h2>
 <table>
 <thead>
 <tr>
-<th>Byte(s)</th>
-<th>Field</th>
+<th>Component</th>
+<th>Part Number</th>
+<th>Supply Voltage</th>
+<th>#</th>
+<th>Absolute Max Current (mA)</th>
+<th>Total Current (mA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32 Microcontroller</td>
+<td>ESP32-S3-WROOM-1-N4</td>
+<td>3.3V</td>
+<td>1</td>
+<td>500</td>
+<td>500</td>
+</tr>
+<tr>
+<td>H-Bridge Motor Driver</td>
+<td>IFX9201SGAUMA1</td>
+<td>9V</td>
+<td>1</td>
+<td>13</td>
+<td>13</td>
+</tr>
+<tr>
+<td>DC Gearmotor</td>
+<td>Pololu 4843</td>
+<td>9V</td>
+<td>1</td>
+<td>2000</td>
+<td>2000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> The IFX9201SG motor driver acts as a switch for the motor. The IC itself draws only 13mA of quiescent supply current. The motor current flows through the driver but is consumed by the motor and is listed under the motor entry above. The motor current figure of 2000mA represents the expected operating current rather than the absolute stall current of 3750mA at 9V, reflecting realistic operating conditions for the rover.</p>
+<hr>
+<h2 id="section-b-power-rail-assignment">Section B: Power Rail Assignment</h2>
+<h3 id="rail-1-9v-power-rail">Rail 1: +9V Power Rail</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Part Number</th>
+<th>Supply Voltage</th>
+<th>#</th>
+<th>Absolute Max Current (mA)</th>
+<th>Total Current (mA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H-Bridge Motor Driver</td>
+<td>IFX9201SGAUMA1</td>
+<td>9V</td>
+<td>1</td>
+<td>13</td>
+<td>13</td>
+</tr>
+<tr>
+<td>DC Gearmotor</td>
+<td>Pololu 4843</td>
+<td>9V</td>
+<td>1</td>
+<td>2000</td>
+<td>2000</td>
+</tr>
+<tr>
+<td><strong>Subtotal</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>2013</strong></td>
+</tr>
+<tr>
+<td><strong>Safety Margin</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>25%</strong></td>
+</tr>
+<tr>
+<td><strong>Total Current Required</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>2516.25 mA</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regulator or Source Choice:</strong> +9V Wall Supply (Barrel Jack) -- 9V, 3000mA maximum
+<strong>Total Remaining Current Available on +9V Rail: 483.75 mA</strong></p>
+<h3 id="rail-2-33v-power-rail">Rail 2: +3.3V Power Rail</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Part Number</th>
+<th>Supply Voltage</th>
+<th>#</th>
+<th>Absolute Max Current (mA)</th>
+<th>Total Current (mA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32 Microcontroller</td>
+<td>ESP32-S3-WROOM-1-N4</td>
+<td>3.3V</td>
+<td>1</td>
+<td>500</td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>Subtotal</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>500</strong></td>
+</tr>
+<tr>
+<td><strong>Safety Margin</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>25%</strong></td>
+</tr>
+<tr>
+<td><strong>Total Current Required</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>625 mA</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regulator or Source Choice:</strong> TPS563201DDCT -- 3.3V, 3000mA maximum
+<strong>Total Remaining Current Available on +3.3V Rail: 2375 mA</strong></p>
+<hr>
+<h2 id="section-c-voltage-regulator-selection">Section C: Voltage Regulator Selection</h2>
+<h3 id="33v-rail-texas-instruments-tps563201ddct">3.3V Rail: Texas Instruments TPS563201DDCT</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0-1</td>
-<td>Start</td>
-<td>0xA5 0x5A</td>
+<td>Input Voltage Range</td>
+<td>4.5V to 17V</td>
 </tr>
 <tr>
-<td>2</td>
-<td>Sender ID</td>
-<td>see table below</td>
+<td>Output Voltage</td>
+<td>3.3V</td>
 </tr>
 <tr>
-<td>3</td>
-<td>Receiver ID</td>
-<td>see table below</td>
+<td>Maximum Output Current</td>
+<td>3000mA</td>
 </tr>
 <tr>
-<td>4</td>
-<td>Message Type</td>
-<td>uint8_t</td>
+<td>Required Output Current</td>
+<td>625mA</td>
 </tr>
 <tr>
-<td>5-61</td>
-<td>Data</td>
-<td>up to 57 bytes</td>
+<td>Remaining Headroom</td>
+<td>2375mA</td>
 </tr>
 <tr>
-<td>62-63</td>
-<td>Stop</td>
-<td>0x59 0x42</td>
+<td>Efficiency</td>
+<td>~90%</td>
 </tr>
 </tbody>
 </table>
-<p>Total packet size is always 64 bytes. All fields are fixed-position. The message type is a single byte at position 4. The data payload begins at position 5.</p>
-<p>Baud rate: 9600, 8N1, no parity, no flow control.</p>
-<p>Byte stuffing: <code>build_packet()</code> subtracts 1 (mod 256) from any byte at positions 4-61 that equals a reserved value (0xA5, 0x5A, 0x59, 0x42). Any subsystem parsing packets from this board must add 1 back to stuffed bytes before interpreting data.</p>
-<hr>
-<h2 id="teammate-ids">Teammate IDs</h2>
-<p>Each node ID is the ASCII value of the person's first initial, which keeps addresses readable in a serial monitor without a lookup table.</p>
+<h4 id="alternative-regulators-considered">Alternative Regulators Considered</h4>
 <table>
 <thead>
 <tr>
-<th>Name</th>
-<th>Subsystem</th>
-<th>Board ID</th>
-<th>Initial</th>
+<th></th>
+<th>Option 1 (Selected)</th>
+<th>Option 2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Christo</td>
-<td>HMI</td>
-<td>0x43</td>
-<td>C</td>
+<td><strong>Part</strong></td>
+<td>TPS563201DDCT</td>
+<td>LM1117-3.3 (Linear)</td>
 </tr>
 <tr>
-<td>Liam</td>
-<td>Motor Drive</td>
-<td>0x4C</td>
-<td>L</td>
+<td><strong>Type</strong></td>
+<td>Switching Buck</td>
+<td>Linear</td>
 </tr>
 <tr>
-<td>Isaiah</td>
-<td>Environmental Sensor</td>
-<td>0x49</td>
-<td>I</td>
+<td><strong>Max Output Current</strong></td>
+<td>3000mA</td>
+<td>800mA</td>
 </tr>
 <tr>
-<td>Arianna</td>
-<td>Camera + Encoder</td>
-<td>0x41</td>
-<td>A</td>
+<td><strong>Input Voltage Range</strong></td>
+<td>4.5V to 17V</td>
+<td>Up to 15V</td>
 </tr>
 <tr>
-<td>Myles</td>
-<td>Distance Sensor</td>
-<td>0x4D</td>
-<td>M</td>
+<td><strong>Efficiency</strong></td>
+<td>~90%</td>
+<td>~37% (9V to 3.3V)</td>
 </tr>
 <tr>
-<td>Ragul</td>
-<td>Gyroscope</td>
-<td>0x52</td>
-<td>R</td>
+<td><strong>Pros</strong></td>
+<td>High efficiency, low heat dissipation, 3A output, wide input range</td>
+<td>Simple design, low noise output, low component count, low cost</td>
 </tr>
 <tr>
-<td>Damian</td>
-<td>MQTT / Wireless</td>
-<td>0x44</td>
-<td>D</td>
+<td><strong>Cons</strong></td>
+<td>Requires external inductor and careful PCB layout, switching noise</td>
+<td>Wastes 5.7V as heat at 9V input, only 800mA maximum output</td>
 </tr>
 <tr>
-<td>(none)</td>
-<td>Broadcast / Everyone</td>
-<td>0x58</td>
-<td>X</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="receive-state-machine">Receive State Machine</h2>
-<p>Every byte off the UART runs through three states before any routing decision happens. Junk between frames is silently ignored. A false start (0xA5 not followed by 0x5A) drops back to WAIT_P1 without losing the second byte if it is another 0xA5.</p>
-<div class="highlight"><pre><span></span><code>WAIT_P1  -&gt;  byte == 0xA5?  yes -&gt; WAIT_P2,  no -&gt; ignore
-WAIT_P2  -&gt;  byte == 0x5A?  yes -&gt; COLLECT,  no -&gt; WAIT_P1
-COLLECT  -&gt;  accumulate 64 bytes, then VALIDATE
-VALIDATE -&gt;  stop bits present? sender known? receiver known? not loopback?
-             all pass -&gt; ROUTE,  any fail -&gt; discard, back to WAIT_P1
-ROUTE    -&gt;  receiver == 0x4C:  handle + ACK, do NOT forward
-             receiver == 0x58:  handle AND forward downstream
-             receiver == other: forward only, do NOT handle
-</code></pre></div>
-<p>RX drains completely before any outbound packet goes out. Packets with bad start/stop bits, unknown IDs, or a sender of 0x4C (loopback) are dropped with an error log to the REPL.</p>
-<hr>
-<h2 id="messages-i-receive">Messages I Receive</h2>
-<p>All multi-byte fields are little-endian. Data bytes are numbered from 0 starting at packet byte 5.</p>
-<h3 id="type-0x01-motor-speed-command">Type 0x01: Motor Speed Command</h3>
-<p><strong>From:</strong> Christo HMI (0x43)</p>
-<table>
-<thead>
-<tr>
-<th>Data Byte</th>
-<th>0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Field</td>
-<td>speed</td>
-</tr>
-<tr>
-<td>C Type</td>
-<td>int8_t (sent as uint8_t, two's complement)</td>
-</tr>
-<tr>
-<td>Range</td>
-<td>-100 to 100</td>
-</tr>
-<tr>
-<td>Example</td>
-<td>-30 sent as 0xE2</td>
-</tr>
-</tbody>
-</table>
-<p>Speed is a PWM duty cycle percentage clamped to +/-100. Negative values command reverse direction, positive values command forward direction, and zero stops the motor. On receipt the node decodes the signed value, sets the IFX9201SG direction via SPI control register (SDIR bit), and applies the duty cycle to the PWM peripheral on GPIO4. The SPI diagnosis register is polled immediately after the motor command is applied and any fault is printed to the REPL.</p>
-<p><strong>Motor control logic:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Speed Value</th>
-<th>Direction</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1 to 100</td>
-<td>Forward</td>
-<td>SDIR=1, PWM duty = speed%</td>
-</tr>
-<tr>
-<td>-1 to -100</td>
-<td>Reverse</td>
-<td>SDIR=0, PWM duty = abs(speed)%</td>
-</tr>
-<tr>
-<td>0</td>
-<td>Stop</td>
-<td>SEN=0, PWM duty = 0</td>
-</tr>
-</tbody>
-</table>
-<h3 id="type-0x02-stop-command">Type 0x02: Stop Command</h3>
-<p><strong>From:</strong> Any node (0x58 broadcast or 0x4C direct)</p>
-<table>
-<thead>
-<tr>
-<th>Data Byte</th>
-<th>none</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Field</td>
-<td>(no payload)</td>
-</tr>
-<tr>
-<td>C Type</td>
-<td>(none)</td>
-</tr>
-</tbody>
-</table>
-<p>Immediately sets PWM duty to 0, disables the IFX9201SG outputs via SPI (SEN=0), resets the SPI diagnosis register, and polls fault status. Motor speed is set to 0 in firmware state. An ACK is returned if the packet was addressed directly to 0x4C.</p>
-<h3 id="type-0xaa-ack">Type 0xAA: ACK</h3>
-<p><strong>From:</strong> Any node</p>
-<table>
-<thead>
-<tr>
-<th>Packet Byte</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Field</td>
-<td>msg_type</td>
-<td>received_type</td>
-</tr>
-<tr>
-<td>Value</td>
-<td>0xAA</td>
-<td>echoes the type that triggered the ACK</td>
-</tr>
-</tbody>
-</table>
-<p>ACK packets addressed to 0x4C are logged to the REPL and consumed. They are not forwarded downstream.</p>
-<hr>
-<h2 id="messages-i-send">Messages I Send</h2>
-<h3 id="type-0xaa-ack_1">Type 0xAA: ACK</h3>
-<p><strong>To:</strong> Sender of any valid packet addressed to 0x4C</p>
-<table>
-<thead>
-<tr>
-<th>Packet Byte</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Field</td>
-<td>msg_type</td>
-<td>received_type</td>
-</tr>
-<tr>
-<td>Value</td>
-<td>0xAA (fixed)</td>
-<td>echoes the type that triggered it</td>
-</tr>
-<tr>
-<td>Example</td>
-<td>0xAA</td>
-<td>0x01</td>
-</tr>
-</tbody>
-</table>
-<p>Every valid packet addressed directly to 0x4C receives an immediate ACK back to the sender. Broadcast packets (0x58) do not receive an ACK. Sending ACKs to a broadcast address would flood the bus with simultaneous responses from every node.</p>
-<hr>
-<h2 id="routing-logic">Routing Logic</h2>
-<table>
-<thead>
-<tr>
-<th>Condition</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Receiver == 0x4C (me)</td>
-<td>Handle, send ACK, do not forward</td>
-</tr>
-<tr>
-<td>Receiver == 0x58 (broadcast)</td>
-<td>Handle and forward downstream</td>
-</tr>
-<tr>
-<td>Sender == 0x4C (loopback)</td>
-<td>Discard silently (E09)</td>
-</tr>
-<tr>
-<td>Receiver == other known node</td>
-<td>Forward immediately, do not handle</td>
-</tr>
-<tr>
-<td>Malformed / unknown ID</td>
-<td>Discard, print error to REPL</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="ifx9201sg-spi-control-interface">IFX9201SG SPI Control Interface</h2>
-<p>The motor driver is operated in SPI mode (SIN=1 in the control register). The SPI bus runs at 1MHz, Mode 1 (CPOL=0, CPHA=1), 8-bit words, MSB first, per the IFX9201SG datasheet section 4.12.</p>
-<h3 id="spi-commands">SPI Commands</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Byte Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RD_DIA</td>
-<td>0x00</td>
-<td>Read diagnosis register</td>
-</tr>
-<tr>
-<td>RES_DIA</td>
-<td>0x80</td>
-<td>Reset diagnosis register</td>
-</tr>
-<tr>
-<td>RD_REV</td>
-<td>0x20</td>
-<td>Read device revision</td>
-</tr>
-<tr>
-<td>RD_CTRL</td>
-<td>0x60</td>
-<td>Read control register</td>
-</tr>
-<tr>
-<td>WR_CTRL</td>
-<td>0xE0</td>
-<td>Write control register</td>
-</tr>
-<tr>
-<td>WR_CTRL_RD_DIA</td>
-<td>0xC0</td>
-<td>Write control and read diagnosis</td>
-</tr>
-</tbody>
-</table>
-<h3 id="control-register-bits-wr_ctrl-0xe0-data">Control Register Bits (WR_CTRL: 0xE0 | data)</h3>
-<table>
-<thead>
-<tr>
-<th>Bit</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4</td>
-<td>OLDIS</td>
-<td>1 = disconnect open load current source</td>
-</tr>
-<tr>
-<td>3</td>
-<td>SIN</td>
-<td>1 = SPI control mode, 0 = PWM/DIR mode</td>
-</tr>
-<tr>
-<td>2</td>
-<td>SEN</td>
-<td>1 = enable outputs, 0 = disable outputs</td>
-</tr>
-<tr>
-<td>1</td>
-<td>SDIR</td>
-<td>1 = forward, 0 = reverse</td>
-</tr>
-<tr>
-<td>0</td>
-<td>SPWM</td>
-<td>1 = PWM input active</td>
-</tr>
-</tbody>
-</table>
-<h3 id="diagnosis-register-fault-codes-lower-nibble">Diagnosis Register Fault Codes (lower nibble)</h3>
-<table>
-<thead>
-<tr>
-<th>DIA[3:0]</th>
-<th>Hex</th>
-<th>Fault</th>
-<th>Latched</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1111</td>
-<td>0xF</td>
-<td>No failure</td>
-<td>No</td>
-</tr>
-<tr>
-<td>1110</td>
-<td>0xE</td>
-<td>Short to GND at OUT1</td>
+<td><strong>Selected</strong></td>
 <td>Yes</td>
-</tr>
-<tr>
-<td>1101</td>
-<td>0xD</td>
-<td>Short to VS at OUT1</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>1100</td>
-<td>0xC</td>
-<td>Open load</td>
-<td>No</td>
-</tr>
-<tr>
-<td>1011</td>
-<td>0xB</td>
-<td>Short to GND at OUT2</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>1010</td>
-<td>0xA</td>
-<td>Short to GND at OUT1 and OUT2</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>1001</td>
-<td>0x9</td>
-<td>Short to VS at OUT1 and GND at OUT2</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>0111</td>
-<td>0x7</td>
-<td>Short to VS at OUT2</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>0110</td>
-<td>0x6</td>
-<td>Short to GND at OUT1 and VS at OUT2</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>0101</td>
-<td>0x5</td>
-<td>Short to VS at OUT1 and OUT2</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>0011</td>
-<td>0x3</td>
-<td>VS undervoltage</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
-<p>Latched faults require an explicit RES_DIA command or a DIS pin toggle to clear. Non-latched faults clear automatically when the fault condition is resolved.</p>
+<p><strong>Rationale:</strong> The TPS563201DDCT was selected for its switching efficiency. A linear regulator dropping 9V to 3.3V would dissipate 5.7V x load current as heat. At 500mA ESP32 load this is 2.85W of wasted power. The switching regulator wastes less than 10% of this, significantly extending battery life in a rover application. The 3A output rating also provides 2375mA of headroom above the 625mA required, leaving capacity for future expansion.</p>
+<h3 id="9v-rail-no-regulator-required">9V Rail: No Regulator Required</h3>
+<p>The 9V rail is supplied directly from the external wall supply via the barrel jack connector. No regulator is required on this rail.</p>
 <hr>
-<h2 id="gpio-pin-assignment">GPIO Pin Assignment</h2>
+<h2 id="section-d-external-power-source">Section D: External Power Source</h2>
+<p><strong>Power Source: Plug-in Wall Supply -- 9V DC, 3000mA</strong></p>
 <table>
 <thead>
 <tr>
-<th>GPIO</th>
-<th>Function</th>
-<th>Direction</th>
-<th>Connected To</th>
+<th>Component</th>
+<th>Part Number</th>
+<th>Supply Voltage Range</th>
+<th>Output Voltage</th>
+<th>Max Current (mA)</th>
+<th>Total Current (mA)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GPIO4</td>
-<td>Motor PWM</td>
-<td>Output</td>
-<td>IFX9201SG PWM (pin 12)</td>
-</tr>
-<tr>
-<td>GPIO5</td>
-<td>Motor DIR</td>
-<td>Output</td>
-<td>IFX9201SG DIR (pin 1)</td>
-</tr>
-<tr>
-<td>GPIO6</td>
-<td>Motor DIS</td>
-<td>Output</td>
-<td>IFX9201SG DIS (pin 11)</td>
-</tr>
-<tr>
-<td>GPIO11</td>
-<td>SPI MOSI</td>
-<td>Output</td>
-<td>IFX9201SG SI (pin 8)</td>
-</tr>
-<tr>
-<td>GPIO12</td>
-<td>SPI SCK</td>
-<td>Output</td>
-<td>IFX9201SG SCK (pin 10)</td>
-</tr>
-<tr>
-<td>GPIO13</td>
-<td>SPI MISO</td>
-<td>Input</td>
-<td>IFX9201SG SO (pin 3)</td>
-</tr>
-<tr>
-<td>GPIO39</td>
-<td>SPI CSN</td>
-<td>Output</td>
-<td>IFX9201SG CSN (pin 9)</td>
-</tr>
-<tr>
-<td>GPIO43</td>
-<td>UART TX</td>
-<td>Output</td>
-<td>UART bus connector OUT</td>
-</tr>
-<tr>
-<td>GPIO44</td>
-<td>UART RX</td>
-<td>Input</td>
-<td>UART bus connector IN</td>
-</tr>
-<tr>
-<td>GPIO47</td>
-<td>Debug LED</td>
-<td>Output</td>
-<td>330 ohm resistor to LED to GND</td>
+<td>Plug-in Wall Supply</td>
+<td>(full part number)</td>
+<td>9V DC</td>
+<td>9V</td>
+<td>3000</td>
+<td>3000</td>
 </tr>
 </tbody>
 </table>
-<hr>
-<h2 id="byte-stuffing">Byte Stuffing</h2>
-<p><code>build_packet()</code> subtracts 1 (mod 256) from any byte at positions 4-61 (msg_type through end of data) that matches a reserved value. Reserved set: 0xA5, 0x5A, 0x59, 0x42. Any node receiving a packet from this board must add 1 back to recover stuffed bytes before interpreting the data.</p>
-<hr>
-<h2 id="error-codes">Error Codes</h2>
+<p><strong>Power Rails Connected to External Power Source:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Meaning</th>
+<th>Rail</th>
+<th>Regulator</th>
+<th>Input Voltage Range</th>
+<th>Output Voltage</th>
+<th>Max Current (mA)</th>
+<th>Total Current (mA)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>E01</td>
-<td>Missing start bits</td>
-</tr>
-<tr>
-<td>E02</td>
-<td>Missing stop bits</td>
-</tr>
-<tr>
-<td>E03</td>
-<td>Bad packet length</td>
-</tr>
-<tr>
-<td>E04</td>
-<td>Sender ID not in known node list</td>
-</tr>
-<tr>
-<td>E05</td>
-<td>Receiver ID not in known node list</td>
-</tr>
-<tr>
-<td>E07</td>
-<td>Payload too long</td>
-</tr>
-<tr>
-<td>E08</td>
-<td>Zero ID detected in sender or receiver field</td>
-</tr>
-<tr>
-<td>E09</td>
-<td>Loopback detected, packet discarded</td>
+<td>3.3V Logic Rail</td>
+<td>TPS563201DDCT</td>
+<td>4.5V to 17V</td>
+<td>3.3V</td>
+<td>3000</td>
+<td>3000</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Total Remaining Current Available on External Power Source: 0 mA</strong></p>
+<p><strong>Note:</strong> The wall supply is running at its rated maximum with 0mA remaining. A higher rated supply of 5A or greater is strongly recommended to provide margin for motor startup surges and to avoid voltage sag under peak load. A 9V 5A supply would leave 2483.75mA of headroom on the 9V rail.</p>
+<hr>
+<h3 id="realistic-case-motor-at-25-of-maximum">Realistic Case (Motor at 25% of Maximum)</h3>
+<p>At normal operating load the motor draws approximately 500mA, giving a realistic total system draw of approximately 730mA.</p>
+<table>
+<thead>
+<tr>
+<th>Battery</th>
+<th>Capacity</th>
+<th>Realistic Life</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9V 2000mAh LiPo</td>
+<td>2000mAh</td>
+<td>2000 / 730 = 2.74 hours (164 minutes)</td>
+</tr>
+<tr>
+<td>9V 5000mAh LiPo</td>
+<td>5000mAh</td>
+<td>5000 / 730 = 6.85 hours (411 minutes)</td>
+</tr>
+<tr>
+<td>9V 10000mAh LiPo</td>
+<td>10000mAh</td>
+<td>10000 / 730 = 13.70 hours (822 minutes)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="section-f-power-budget-analysis-and-conclusions">Section F: Power Budget Analysis and Conclusions</h2>
+<h3 id="how-the-power-budget-was-used">How the Power Budget Was Used</h3>
+<p>The power budget was constructed by first identifying all active components in the subsystem and sourcing their maximum current draw directly from the relevant datasheets. The ESP32-S3-WROOM-1-N4 maximum current of 500mA was taken from the ESP32-S3 datasheet power consumption table. The IFX9201SG quiescent supply current of 13mA was taken from Table 4 parameter P_6.0.1 of the IFX9201SG datasheet. The Pololu 4843 motor current of 2000mA was estimated from the product specifications scaled to 9V operation.</p>
+<p>Components were then assigned to two power rails based on their operating voltage. The 9V rail powers the motor and H-bridge directly from the wall supply, avoiding the power loss that would occur if the motor current were first passed through a regulator. The 3.3V rail powers the ESP32 exclusively via the TPS563201DDCT switching regulator. A 25% safety margin was applied to each rail subtotal to account for transient current spikes, component variation, and future expansion.</p>
+<h3 id="key-conclusions">Key Conclusions</h3>
+<p><strong>Power source sizing is critical.</strong> The selected 3A wall supply leaves 0mA of remaining headroom after accounting for the 9V rail load. This is insufficient for reliable operation, as motor startup surges can briefly exceed the rated operating current. A minimum 5A supply at 9V is recommended for the final design to provide adequate margin.</p>
+<p><strong>The switching regulator choice is well justified.</strong> The TPS563201DDCT leaves 2375mA of headroom on the 3.3V rail above the 625mA required. This means the regulator is operating at approximately 21% of its rated capacity, which reduces heat dissipation and improves long-term reliability.</p>
+<p><strong>Motor current dominates the power budget.</strong> The Pololu 4843 motor accounts for over 79% of total system current draw at the 9V rail level. This confirms that motor driver and wiring selection are the most critical power design decisions in this subsystem. The 2.5mm wide traces used on the 9V motor power rail in the PCB design were directly informed by this finding.</p>
+<p><strong>The 9V single-rail architecture simplifies the design.</strong> By choosing components that operate at either 9V or 3.3V and using a single external supply, the design avoids the complexity and cost of multiple wall supplies or multi-output regulators. The TPS563201DDCT efficiently bridges the two voltage domains with minimal component overhead.</p>
+<h3 id="power-budget-spreadsheet">Power Budget Spreadsheet</h3>
+<p><a href="../PB.xlsx">Download Power Budget Spreadsheet</a></p>
 
 
 
@@ -2101,7 +1834,7 @@ ROUTE    -&gt;  receiver == 0x4C:  handle + ACK, do NOT forward
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../../06-PCB/PCB/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PCB Design">
+          <a href="../../07-API/API/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Motor Drive Subsystem API">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
@@ -2111,20 +1844,20 @@ ROUTE    -&gt;  receiver == 0x4C:  handle + ACK, do NOT forward
                 Previous
               </span>
               <div class="md-ellipsis">
-                PCB Design
+                Motor Drive Subsystem API
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../09-Power-Budget/Power-Budget/" class="md-footer__link md-footer__link--next" aria-label="Next: Power Budget">
+          <a href="../../09-HardwareV2/HardwareV2/" class="md-footer__link md-footer__link--next" aria-label="Next: Hardware V2.0">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Power Budget
+                Hardware V2.0
               </div>
             </div>
             <div class="md-footer__button md-icon">
