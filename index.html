@@ -557,10 +557,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Project Summary
@@ -568,8 +567,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#my-contribution" class="md-nav__link">
     <span class="md-ellipsis">
       My Contribution
@@ -577,9 +576,13 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#datasheet-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasheet Navigation
+    </span>
+  </a>
   
 </li>
       
@@ -1174,10 +1177,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Project Summary
@@ -1185,8 +1187,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#my-contribution" class="md-nav__link">
     <span class="md-ellipsis">
       My Contribution
@@ -1194,9 +1196,13 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#datasheet-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasheet Navigation
+    </span>
+  </a>
   
 </li>
       
@@ -1226,31 +1232,78 @@
   <h1>Welcome</h1>
 
 <p></p><center>
-<font size="6">Liam Mabbutt's Datasheet</font><br>
+<font size="6">Liam Mabbutt's Individual Datasheet</font><br>
 as part of<br>
-<font size="8"> Project Name</font><br>
+<font size="8">Mars Exploration Rover</font><br>
 for<br>
-<font size="5"> Team 305 </font><br><p></p>
-<p><strong>Submission: May, 1st, 2026</strong>
+<font size="5">Team 305 | EGR314 Spring 2026</font><br><p></p>
+<p><strong>Submission: May 4th, 2026</strong>
 </p></center><p></p>
+<hr>
 <h2 id="introduction">Introduction</h2>
-<ul>
-<li><strong>This needs to be updated so that a reader gets an idea of the purpose of this datasheet.</strong></li>
-</ul>
-<h3 id="project-summary">Project Summary</h3>
-<ul>
-<li>This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.</li>
-<li>Add context that ties into the link to your <a href="https://egr314-s-2026-30.github.io/EGR314-S-2026-305.github.io/">team report.</a></li>
-</ul>
-<h3 id="my-contribution">My Contribution</h3>
-<ul>
-<li>This needs to be updated to reflect a team introduction</li>
-<li>Content should also help an unfamiliar reader navigate to areas of interest. Information like:</li>
-</ul>
-<p>To review the details listed of the material used to construct the subsection, you can review it in the <a href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/04-BOM/BOM/">"BOM"</a> section of the datasheet.</p>
-<blockquote>
-<p>Continue for all the remaining/missing sections.</p>
-</blockquote>
+<p>This datasheet documents the design, implementation, and testing of the Motor Drive subsystem developed by Liam Mabbutt as part of Team 305's Mars Exploration Rover project. The Motor Drive subsystem is responsible for providing rover mobility through bidirectional DC motor control, receiving speed and direction commands from the team's HMI node over a shared UART daisy-chain bus, and reporting motor fault status in real time via SPI diagnostics. The board is built around an ESP32-S3-WROOM-1-N4 microcontroller, an IFX9201SGAUMA1 H-bridge motor driver, and a TPS563201DDCT switching voltage regulator, and is designed to integrate seamlessly with the rest of the team's multi-node communication architecture.</p>
+<hr>
+<h2 id="project-summary">Project Summary</h2>
+<p>Team 305's Mars Exploration Rover is a small autonomous rover designed for surface exploration tasks. The rover uses a distributed control architecture where each team member is responsible for an individual subsystem node connected via a shared UART daisy-chain bus. The HMI node operated by Christo serves as the central user interface, collecting sensor data from all nodes and issuing motor commands to the drive system. The remaining nodes each handle a specific sensing or actuation function and communicate using a fixed 64-byte packet protocol with consistent addressing, framing, and acknowledgement behaviour across all nodes.</p>
+<p>The Motor Drive subsystem contributes the actuation capability of the rover, translating high-level speed and direction commands from the HMI into physical wheel motion. Without a functioning drive system the rover cannot move, making this subsystem foundational to the overall project success. The subsystem was designed to support two independent motors for differential steering, though Version 1.0 brought up and validated a single motor channel during the individual subsystem phase.</p>
+<p>For the full team context, system-level block diagram, and integrated project report, visit the <a href="https://egr314-s-2026-30.github.io/EGR314-S-2026-305.github.io/">Team 305 Report</a>.</p>
+<hr>
+<h2 id="my-contribution">My Contribution</h2>
+<p>My role on Team 305 was the Actuation Subsystem member, responsible for designing and implementing the motor drive hardware and firmware. This included selecting the motor, H-bridge driver, and voltage regulator; designing the KiCad schematic and PCB layout; assembling and bringing up the board; and writing the MicroPython firmware to integrate with the team's UART bus protocol.</p>
+<p>The key deliverables from this subsystem are a custom two-layer PCB capable of driving a DC gearmotor bidirectionally at variable speed, a fully integrated UART node that receives motor commands from the HMI and forwards all other bus traffic downstream, and SPI-based fault monitoring of the H-bridge in real time.</p>
+<hr>
+<h2 id="datasheet-navigation">Datasheet Navigation</h2>
+<p>Use the sections below to navigate to specific areas of this datasheet:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../01-Requirements/Requirements/">Requirements</a></td>
+<td>Product requirements and design constraints for the motor drive subsystem</td>
+</tr>
+<tr>
+<td><a href="../02-Component-Selection/Component-Selection/">Component Selection</a></td>
+<td>Final component selections, trade-off analysis, and rationale for all major ICs</td>
+</tr>
+<tr>
+<td><a href="../03-Hardware-Proposal/Hardware-Proposal/">Hardware Proposal</a></td>
+<td>Schematic design and PCB layout for the motor drive board</td>
+</tr>
+<tr>
+<td><a href="../04-BOM/BOM/">BOM</a></td>
+<td>Full bill of materials with part numbers, quantities, and DigiKey links</td>
+</tr>
+<tr>
+<td><a href="../05-Power-Budget/Power-Budget/">Power Budget</a></td>
+<td>Power rail analysis, regulator selection, and battery life estimate</td>
+</tr>
+<tr>
+<td><a href="../06-API/API/">API</a></td>
+<td>UART communication protocol, message types, and SPI register interface</td>
+</tr>
+<tr>
+<td><a href="../07-PCB/PCB/">PCB</a></td>
+<td>PCB front and back images, Gerber files, and ECAD project download</td>
+</tr>
+<tr>
+<td><a href="../08-Hardware-V2/Hardware-V2/">Hardware V2.0</a></td>
+<td>Proposed improvements for a second hardware revision</td>
+</tr>
+<tr>
+<td><a href="../09-Reflection/Reflection/">Reflection</a></td>
+<td>Requirements review, lessons learned, and recommendations for future students</td>
+</tr>
+<tr>
+<td><a href="../10-Resources/Resources/">Resources</a></td>
+<td>Final firmware download and demo videos</td>
+</tr>
+</tbody>
+</table>
 
 
 
