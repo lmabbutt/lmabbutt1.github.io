@@ -1,10 +1,5 @@
 # Bill of Materials
 
-**Team Number:** 305
-**Project Name:** Mars Exploration Rover
-**Team Member:** Liam Mabbutt
-**Version:** 1
-
 ---
 
 ## Summary
