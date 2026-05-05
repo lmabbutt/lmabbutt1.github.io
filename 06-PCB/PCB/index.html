@@ -9,13 +9,13 @@
       
       
       
-        <link rel="canonical" href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/08-API/API/">
+        <link rel="canonical" href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/06-PCB/PCB/">
       
       
-        <link rel="prev" href="../../06-PCB/PCB/">
+        <link rel="prev" href="../../05-Schematic/schematic/">
       
       
-        <link rel="next" href="../../09-Power-Budget/Power-Budget/">
+        <link rel="next" href="../../08-API/API/">
       
       
       <link rel="icon" href="../../static/logo314.png">
@@ -26,7 +26,7 @@
 
     
       
-        <title>Motor Controller — Message Datasheet - Liam Mabbutt's Datasheet</title>
+        <title>PCB Design - Liam Mabbutt's Datasheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#motor-controller-message-datasheet" class="md-skip">
+        <a href="#pcb-design" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Motor Controller — Message Datasheet
+              PCB Design
             
           </span>
         </div>
@@ -315,11 +315,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../06-PCB/PCB/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -335,13 +337,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../08-API/API/" class="md-tabs__link">
           
   
     
@@ -698,52 +698,6 @@
       
   
   
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../06-PCB/PCB/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    06 PCB
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -768,24 +722,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    08 API
+    06 PCB
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            08 API
+            06 PCB
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
             
@@ -809,7 +763,7 @@
           
   
   <span class="md-ellipsis">
-    Motor Controller — Message Datasheet
+    PCB Design
   </span>
   
 
@@ -820,7 +774,7 @@
         
   
   <span class="md-ellipsis">
-    Motor Controller — Message Datasheet
+    PCB Design
   </span>
   
 
@@ -842,56 +796,116 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#message-type-1-motor-control-state-report-send" class="md-nav__link">
+  <a href="#ecad-design" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 1 — Motor Control State Report 🔵 Send
+      ECAD Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ECAD Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-of-pcb-ecad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front of PCB (ECAD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-of-pcb-ecad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Back of PCB (ECAD)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical PCB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical PCB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw-pcb-before-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw PCB (Before Population)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalized-pcb-after-soldering-and-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalized PCB (After Soldering and Testing)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finalized PCB (After Soldering and Testing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Files
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-2-motor-status-report-send" class="md-nav__link">
+  <a href="#design-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 2 — Motor Status Report 🔵 Send
+      Design Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#known-issues-and-revisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues and Revisions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#message-type-13-system-status-report-receive-act-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message Type 13 — System Status Report 🟢 Receive / Act On
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-type-14-system-error-code-report-send-receive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message Type 14 — System Error Code Report 🟡 Send &amp; Receive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-items-for-team-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open Items for Team Resolution
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -906,6 +920,52 @@
             
           </ul>
         </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-API/API/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    08 API
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1040,56 +1100,116 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#message-type-1-motor-control-state-report-send" class="md-nav__link">
+  <a href="#ecad-design" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 1 — Motor Control State Report 🔵 Send
+      ECAD Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ECAD Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-of-pcb-ecad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front of PCB (ECAD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-of-pcb-ecad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Back of PCB (ECAD)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical PCB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Physical PCB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw-pcb-before-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw PCB (Before Population)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalized-pcb-after-soldering-and-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalized PCB (After Soldering and Testing)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finalized PCB (After Soldering and Testing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Files
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-type-2-motor-status-report-send" class="md-nav__link">
+  <a href="#design-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Message Type 2 — Motor Status Report 🔵 Send
+      Design Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#known-issues-and-revisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues and Revisions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#message-type-13-system-status-report-receive-act-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message Type 13 — System Status Report 🟢 Receive / Act On
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-type-14-system-error-code-report-send-receive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message Type 14 — System Error Code Report 🟡 Send &amp; Receive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-items-for-team-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open Items for Team Resolution
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1108,7 +1228,7 @@
                   
 
   
-    <a href="https://github.com/embedded-systems-design/EGR314DataSheetTemplate/edit/main/docs/08-API/API.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/embedded-systems-design/EGR314DataSheetTemplate/edit/main/docs/06-PCB/PCB.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
     </a>
@@ -1116,398 +1236,52 @@
   
 
 
-<h1 id="motor-controller-message-datasheet">Motor Controller — Message Datasheet</h1>
-<p><strong>Network:</strong> UART daisy-chain<br>
-<strong>Data types:</strong> MicroPython / C<br>
-<strong>Byte order:</strong> Little-endian for all multi-byte fields</p>
+<h1 id="pcb-design">PCB Design</h1>
+<h2 id="ecad-design">ECAD Design</h2>
+<h3 id="front-of-pcb-ecad">Front of PCB (ECAD)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Efront.png" data-desc-position="bottom"><img alt="PCB Front ECAD" src="../Efront.png"></a></p>
+<h3 id="back-of-pcb-ecad">Back of PCB (ECAD)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Eback.png" data-desc-position="bottom"><img alt="PCB Back ECAD" src="../Eback.png"></a></p>
+<hr>
+<h2 id="physical-pcb">Physical PCB</h2>
+<h3 id="raw-pcb-before-population">Raw PCB (Before Population)</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Front.jpg" data-desc-position="bottom"><img alt="Raw PCB Front" src="../Front.jpg"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Back.jpg" data-desc-position="bottom"><img alt="Raw PCB Back" src="../Back.jpg"></a></p>
+<hr>
+<h3 id="finalized-pcb-after-soldering-and-testing">Finalized PCB (After Soldering and Testing)</h3>
+<h4 id="front">Front</h4>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Assembled.jpg" data-desc-position="bottom"><img alt="Populated PCB Front" src="../Assembled.jpg"></a></p>
+<h2 id="project-files">Project Files</h2>
 <table>
 <thead>
 <tr>
-<th>Legend</th>
-<th>Meaning</th>
+<th>File</th>
+<th>Description</th>
+<th>Download</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>🔵 Send</td>
-<td>This board transmits the message</td>
+<td>ECAD Project</td>
+<td>Full KiCad project files</td>
+<td><a href="../Project.zip">Download</a></td>
 </tr>
 <tr>
-<td>🟢 Receive</td>
-<td>This board listens and acts on the message</td>
-</tr>
-<tr>
-<td>🟡 Both</td>
-<td>This board sends and receives this message</td>
+<td>Gerber Files</td>
+<td>Gerber files submitted for fabrication</td>
+<td><a href="../GRB.zip">Download</a></td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="message-type-1-motor-control-state-report-send">Message Type 1 — Motor Control State Report 🔵 Send</h2>
-<p>Broadcast by the motor controller to report commanded motor states.</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-<td><code>1</code></td>
-<td>Always 1 for this message</td>
-</tr>
-<tr>
-<td>3–4</td>
-<td><code>left_motor_speed</code></td>
-<td><code>int16_t</code></td>
-<td>2</td>
-<td>-255</td>
-<td>255</td>
-<td><code>-200</code></td>
-<td>PWM duty cycle; negative = reverse ⚠️ <em>team must confirm range</em></td>
-</tr>
-<tr>
-<td>5–6</td>
-<td><code>right_motor_speed</code></td>
-<td><code>int16_t</code></td>
-<td>2</td>
-<td>-255</td>
-<td>255</td>
-<td><code>200</code></td>
-<td>PWM duty cycle; negative = reverse ⚠️ <em>team must confirm range</em></td>
-</tr>
-<tr>
-<td>7</td>
-<td><code>left_motor_dir</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td><code>0</code></td>
-<td>0 = reverse, 1 = forward</td>
-</tr>
-<tr>
-<td>8</td>
-<td><code>right_motor_dir</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td><code>1</code></td>
-<td>0 = reverse, 1 = forward</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 8 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> No payload length field or checksum/CRC — recommend adding for UART reliability.</p>
-<p>⚠️ <strong>Redundancy concern:</strong> Direction is encoded twice — via the sign of <code>int16_t</code> speed AND via the direction byte. Team should decide: use sign of <code>int16_t</code> only, or use unsigned speed + direction byte exclusively.</p>
-</blockquote>
-<hr>
-<h2 id="message-type-2-motor-status-report-send">Message Type 2 — Motor Status Report 🔵 Send</h2>
-<p>Periodic report of measured motor operating conditions sent by this board.</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>2</td>
-<td>2</td>
-<td><code>2</code></td>
-<td>Always 2 for this message</td>
-</tr>
-<tr>
-<td>3–4</td>
-<td><code>left_motor_current_ma</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>0</td>
-<td>5000</td>
-<td><code>1200</code></td>
-<td>Measured current in mA; <code>uint16_t</code> supports 0–65535</td>
-</tr>
-<tr>
-<td>5–6</td>
-<td><code>right_motor_current_ma</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>0</td>
-<td>5000</td>
-<td><code>1350</code></td>
-<td>Measured current in mA</td>
-</tr>
-<tr>
-<td>7</td>
-<td><code>left_motor_status</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>0</code></td>
-<td>Status code ⚠️ <em>team must define code table</em></td>
-</tr>
-<tr>
-<td>8</td>
-<td><code>right_motor_status</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>0</code></td>
-<td>Status code ⚠️ <em>team must define code table</em></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 8 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> No actual motor RPM or encoder feedback field. If encoders are present, a <code>uint16_t rpm</code> field per motor is recommended for closed-loop control.</p>
-<p>⚠️ <strong>Motor status codes are undefined.</strong> Suggested definitions:
-- <code>0</code> = OK
-- <code>1</code> = Stalled
-- <code>2</code> = Overcurrent
-- <code>3</code> = Fault</p>
-</blockquote>
-<hr>
-<h2 id="message-type-13-system-status-report-receive-act-on">Message Type 13 — System Status Report 🟢 Receive / Act On</h2>
-<p>Broadcast from the main controller. The motor controller monitors system state and battery voltage to adjust behavior (e.g., emergency stop, low-battery throttling).</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>13</td>
-<td>13</td>
-<td><code>13</code></td>
-<td>Filter on this value to identify message</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>system_state</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>1</code></td>
-<td>Act on this: stop motors if state = emergency stop ⚠️ <em>state codes undefined</em></td>
-</tr>
-<tr>
-<td>4–7</td>
-<td><code>uptime_ms</code></td>
-<td><code>uint32_t</code></td>
-<td>4</td>
-<td>0</td>
-<td>4294967295</td>
-<td><code>12400</code></td>
-<td>Informational; can ignore or log</td>
-</tr>
-<tr>
-<td>8–9</td>
-<td><code>battery_voltage_mv</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>0</td>
-<td>65535</td>
-<td><code>11800</code></td>
-<td>Act on this: throttle motors if battery low ⚠️ <em>team must define low-voltage threshold</em></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 9 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> <code>system_state</code> codes are not defined. The motor controller must know which value triggers an emergency stop vs. normal operation.</p>
-</blockquote>
-<hr>
-<h2 id="message-type-14-system-error-code-report-send-receive">Message Type 14 — System Error Code Report 🟡 Send &amp; Receive</h2>
-<p>Sent by this board to report motor faults; also received from other subsystems to monitor overall system health.</p>
-<table>
-<thead>
-<tr>
-<th>Byte(s)</th>
-<th>Variable Name</th>
-<th>C Type</th>
-<th>Bytes</th>
-<th>Min Value</th>
-<th>Max Value</th>
-<th>Example</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1–2</td>
-<td><code>message_type</code></td>
-<td><code>uint16_t</code></td>
-<td>2</td>
-<td>14</td>
-<td>14</td>
-<td><code>14</code></td>
-<td>Always 14 for this message</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>subsystem_id</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>2</code></td>
-<td>When sending: use this board's assigned ID ⚠️ <em>team must assign subsystem IDs</em></td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>error_code</code></td>
-<td><code>uint8_t</code></td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td><code>2</code></td>
-<td>When sending: motor fault code ⚠️ <em>team must define error code table</em></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total payload:</strong> 4 bytes</p>
-<blockquote>
-<p>⚠️ <strong>Missing from team table:</strong> No subsystem ID assignments. This board needs a unique <code>subsystem_id</code> to identify itself when sending errors.</p>
-<p>⚠️ <strong>Error codes are undefined.</strong> Suggested definitions:
-- <code>0</code> = None
-- <code>1</code> = Left motor stall
-- <code>2</code> = Right motor stall
-- <code>3</code> = Left motor overcurrent
-- <code>4</code> = Right motor overcurrent
-- <code>5</code> = Communication timeout</p>
-</blockquote>
-<hr>
-<h2 id="summary">Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Message</th>
-<th>Direction</th>
-<th>Total Payload Bytes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Type 1 — Motor control state report</td>
-<td>🔵 Send</td>
-<td>8</td>
-</tr>
-<tr>
-<td>Type 2 — Motor status report</td>
-<td>🔵 Send</td>
-<td>8</td>
-</tr>
-<tr>
-<td>Type 13 — System status report</td>
-<td>🟢 Receive</td>
-<td>9</td>
-</tr>
-<tr>
-<td>Type 14 — System error code report</td>
-<td>🟡 Both</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="open-items-for-team-resolution">Open Items for Team Resolution</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Issue</th>
-<th>Affects</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Confirm PWM speed range (currently assumed -255 to 255)</td>
-<td>Type 1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Resolve direction encoding redundancy (sign vs. direction byte)</td>
-<td>Type 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Define motor status codes (0=OK, 1=stall, etc.)</td>
-<td>Type 2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Add RPM/encoder feedback fields if using closed-loop control</td>
-<td>Type 2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Define <code>system_state</code> code values (especially emergency stop)</td>
-<td>Type 13</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Define low-battery voltage threshold for motor throttling</td>
-<td>Type 13</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Assign unique <code>subsystem_id</code> to the motor controller board</td>
-<td>Type 14</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Define error code table for motor faults</td>
-<td>Type 14</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Add payload length and CRC/checksum to all messages</td>
-<td>All</td>
-</tr>
-</tbody>
-</table>
+<h2 id="design-notes">Design Notes</h2>
+<h3 id="known-issues-and-revisions">Known Issues and Revisions</h3>
+<p>List any issues discovered during testing and any changes made from the original design:</p>
+<ul>
+<li>Issue 1: 3.3V had to be jumped to pin 2 of the H-bridge to power the SPI communication BUS.</li>
+<li>Issue 2: SPI output had to be jumped to GPIO 13 of the EPS-32 instead of being pulled to ground via a 10k resistor.</li>
+<li>Issue 3: USB connector did not have enough clearance when mounted flush with the board and therefore had to be mounted at an angle so that the usb cable could be connnected.</li>
+</ul>
 
 
 
@@ -1543,7 +1317,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../../06-PCB/PCB/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PCB Design">
+          <a href="../../05-Schematic/schematic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Module Schematic">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
@@ -1553,20 +1327,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                PCB Design
+                Module Schematic
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../09-Power-Budget/Power-Budget/" class="md-footer__link md-footer__link--next" aria-label="Next: Power Budget">
+          <a href="../../08-API/API/" class="md-footer__link md-footer__link--next" aria-label="Next: Motor Controller — Message Datasheet">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Power Budget
+                Motor Controller — Message Datasheet
               </div>
             </div>
             <div class="md-footer__button md-icon">
