@@ -7,7 +7,7 @@ title: Module Schematic
 Below is the schematic design for the drivetrain subsystem. Its consists of an ESP32 microcontroller, two h bridges for controlling the two motors, an extra pin header, a debug LED, and up/downstream UART connections.
 
 
-![schematic](schematic.png){style width:"350" height:"300;"}
+![schematic](Schematic.png){style width:"350" height:"300;"}
 
 
 ## Resouces
